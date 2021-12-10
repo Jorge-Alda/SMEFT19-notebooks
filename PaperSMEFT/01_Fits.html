@@ -1,0 +1,1213 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01: Fits &#8212; Jupyter Notebooks for chapters 6 and 7</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="02: Likelihood Plots" href="02_LikelihoodPlots.html" />
+    <link rel="prev" title="Fit to SMEFT coefficients I" href="README.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Jupyter Notebooks for chapters 6 and 7</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Jupyter Notebooks used for Chapters 6 and 7 of my PhD Thesis
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="README.html">
+   Fit to SMEFT coefficients I
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     01: Fits
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_LikelihoodPlots.html">
+     02: Likelihood Plots
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_RKRD.html">
+     03: RK and RD
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04_ScenarioVII.html">
+     04: Scenario VII
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../PaperILC/README.html">
+   Prospects from ILC
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PaperILC/01_ILCProspects.html">
+     01: Prospects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PaperILC/02_LikelihoodFits.html">
+     02: Likelihood fits
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PaperILC/03_RKRD.html">
+     03: RK and RD
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../PaperML/README.html">
+   Fits to SMEFT coefficients II and Machine Learning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PaperML/01_fits.html">
+     01: Fits
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PaperML/02_plotfits.html">
+     02: Likelihood fits
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PaperML/03_RKRD.html">
+     03: RK and RD
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PaperML/04_TrainingDatasets.html">
+     04: Preparing the Training datasets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PaperML/05_Training.html">
+     05: Training the ML algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PaperML/06_correlations.html">
+     06: Correlations
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navegación de palanca" aria-controls="site-navigation"
+                title="Navegación de palanca" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Descarga esta pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/PaperSMEFT/01_Fits.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
+        title="Modo de pantalla completa"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/Jorge-Alda/SMEFT19/gh-pages?urlpath=tree/jupyter/PaperSMEFT/01_Fits.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lanzamiento Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenido
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#starting">
+   Starting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   Fits
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scenario-i">
+     Scenario I
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scenario-ii">
+     Scenario II
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scenario-iii">
+     Scenario III
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scenario-iv">
+     Scenario IV
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scenario-v">
+     Scenario V
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scenario-vi">
+     Scenario VI
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scenario-vii">
+     Scenario VII
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scenario-viii">
+     Scenario VIII
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scenario-ix">
+     Scenario IX
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scenario-x">
+     Scenario X
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scenario-xi">
+     Scenario XI
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pulls-from-scenario-vii">
+   Pulls from Scenario VII
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="fits">
+<h1>01: Fits<a class="headerlink" href="#fits" title="Permalink to this headline">¶</a></h1>
+<p>In these notebooks we will recalculate the results of <a class="reference external" href="https://arxiv.org/abs/2012.14799">2012.14799</a> using the new data available and the versions 2.3.1 for Flavio and smelli. The updated results are included in chapter 6 of my PhD thesis</p>
+<div class="section" id="starting">
+<h2>Starting<a class="headerlink" href="#starting" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">SMEFT19</span>
+<span class="n">SMEFT19</span><span class="o">.</span><span class="n">SMEFTglob</span><span class="o">.</span><span class="n">smelli</span><span class="o">.</span><span class="n">__version__</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;2.3.1&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>We update the list of available observables, ordered according to their SM pulls. This is the only time that we update the list, in order to make sure that the order of the observables doesn’t change</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">SMEFTglob</span><span class="o">.</span><span class="n">newlist</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">obslist</span> <span class="o">=</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">SMEFTglob</span><span class="o">.</span><span class="n">loadobslist</span><span class="p">()</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">obslist</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>472
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Fits<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>We fit to each scenario, using the published values as starting points</p>
+<div class="section" id="scenario-i">
+<h3>Scenario I<a class="headerlink" href="#scenario-i" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fitI</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">likelihood_global</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">scenarios</span><span class="o">.</span><span class="n">scI</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bfI</span><span class="p">,</span> <span class="n">vI</span><span class="p">,</span> <span class="n">dI</span><span class="p">,</span> <span class="n">LI</span> <span class="o">=</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">fitI</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.14</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Minimizing...
+Pull: 2.8617946171964515 sigma
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bfI</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.14717074])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">LI</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.189868431014583
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">bfI</span><span class="p">,</span> <span class="n">vI</span><span class="p">,</span> <span class="n">dI</span><span class="p">,</span> <span class="n">LI</span><span class="p">,</span> <span class="s1">&#39;../../ellipses/scI.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;Scenario I, PhD version&#39;</span><span class="p">,</span> <span class="s1">&#39;Scenario I&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="scenario-ii">
+<h3>Scenario II<a class="headerlink" href="#scenario-ii" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fitII</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">likelihood_global</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">scenarios</span><span class="o">.</span><span class="n">scII</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bfII</span><span class="p">,</span> <span class="n">vII</span><span class="p">,</span> <span class="n">dII</span><span class="p">,</span> <span class="n">LII</span> <span class="o">=</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">fitII</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Minimizing...
+Pull: 4.229807250453928 sigma
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bfII</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.15360058])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">LII</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>17.89126937599262
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">bfII</span><span class="p">,</span> <span class="n">vII</span><span class="p">,</span> <span class="n">dII</span><span class="p">,</span> <span class="n">LII</span><span class="p">,</span> <span class="s1">&#39;../../ellipses/scII.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;Scenario II, PhD version&#39;</span><span class="p">,</span> <span class="s1">&#39;Scenario II&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="scenario-iii">
+<h3>Scenario III<a class="headerlink" href="#scenario-iii" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fitIII</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">likelihood_global</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">scenarios</span><span class="o">.</span><span class="n">scIII</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bfIII</span><span class="p">,</span> <span class="n">vIII</span><span class="p">,</span> <span class="n">dIII</span><span class="p">,</span> <span class="n">LIII</span> <span class="o">=</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">fitIII</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.38</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Minimizing...
+Pull: 1.597752244467694 sigma
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bfIII</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.30287661])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">LIII</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.5528122347015536
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">bfIII</span><span class="p">,</span> <span class="n">vIII</span><span class="p">,</span> <span class="n">dIII</span><span class="p">,</span> <span class="n">LIII</span><span class="p">,</span> <span class="s1">&#39;../../ellipses/scIII.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;Scenario III, PhD version&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;Scenario III&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="scenario-iv">
+<h3>Scenario IV<a class="headerlink" href="#scenario-iv" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fitIV</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">likelihood_global</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">scenarios</span><span class="o">.</span><span class="n">scIV</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bfIV</span><span class="p">,</span> <span class="n">vIV</span><span class="p">,</span> <span class="n">dIV</span><span class="p">,</span> <span class="n">LIV</span> <span class="o">=</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">fitIV</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.24</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Minimizing...
+Pull: 4.738364680668419 sigma
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bfIV</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.15111781,  0.15206517])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">LIV</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>26.09590537443657
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">bfIV</span><span class="p">,</span> <span class="n">vIV</span><span class="p">,</span> <span class="n">dIV</span><span class="p">,</span> <span class="n">LIV</span><span class="p">,</span> <span class="s1">&#39;../../ellipses/scIV.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;Scenario IV, PhD version&#39;</span><span class="p">,</span> <span class="s1">&#39;Scenario IV&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="scenario-v">
+<h3>Scenario V<a class="headerlink" href="#scenario-v" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fitV</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">likelihood_global</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">scenarios</span><span class="o">.</span><span class="n">scV</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bfV</span><span class="p">,</span> <span class="n">vV</span><span class="p">,</span> <span class="n">dV</span><span class="p">,</span> <span class="n">LV</span> <span class="o">=</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">fitV</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.14</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Minimizing...
+Pull: 2.8197915031344234 sigma
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bfV</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.14674402, -0.2998568 ])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">LV</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.675994120492708
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">bfV</span><span class="p">,</span> <span class="n">vV</span><span class="p">,</span> <span class="n">dV</span><span class="p">,</span> <span class="n">LV</span><span class="p">,</span> <span class="s1">&#39;../../ellipses/scV.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;Scenario V, PhD version&#39;</span><span class="p">,</span> <span class="s1">&#39;Scenario V&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="scenario-vi">
+<h3>Scenario VI<a class="headerlink" href="#scenario-vi" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fitVI</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">likelihood_global</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">scenarios</span><span class="o">.</span><span class="n">scVI</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bfVI</span><span class="p">,</span> <span class="n">vVI</span><span class="p">,</span> <span class="n">dVI</span><span class="p">,</span> <span class="n">LVI</span> <span class="o">=</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">fitVI</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.10</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Minimizing...
+Pull: 4.073740033472786 sigma
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bfVI</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.15201191, -0.27135335])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">LVI</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>19.962287604552085
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">bfVI</span><span class="p">,</span> <span class="n">vVI</span><span class="p">,</span> <span class="n">dVI</span><span class="p">,</span> <span class="n">LVI</span><span class="p">,</span> <span class="s1">&#39;../../ellipses/scVI.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;Scenario VI, PhD version&#39;</span><span class="p">,</span> <span class="s1">&#39;Scenario VI&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="scenario-vii">
+<h3>Scenario VII<a class="headerlink" href="#scenario-vii" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fitVII</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">likelihood_global</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">scenarios</span><span class="o">.</span><span class="n">scVII</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bfVII</span><span class="p">,</span> <span class="n">vVII</span><span class="p">,</span> <span class="n">dVII</span><span class="p">,</span> <span class="n">LVII</span> <span class="o">=</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">fitVII</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.21</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Minimizing...
+Pull: 4.642979408915828 sigma
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bfVII</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.14972665,  0.14965083, -0.26949984])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">LVII</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>28.115878659776335
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">bfVII</span><span class="p">,</span> <span class="n">vVII</span><span class="p">,</span> <span class="n">dVII</span><span class="p">,</span> <span class="n">LVII</span><span class="p">,</span> <span class="s1">&#39;../../ellipses/scVII.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;Scenario VII, PhD version&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;Scenario VII&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="scenario-viii">
+<h3>Scenario VIII<a class="headerlink" href="#scenario-viii" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fitVIII</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">likelihood_global</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">scenarios</span><span class="o">.</span><span class="n">scVIII</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bfVIII</span><span class="p">,</span> <span class="n">vVIII</span><span class="p">,</span> <span class="n">dVIII</span><span class="p">,</span> <span class="n">LVIII</span> <span class="o">=</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">fitVIII</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.01</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Minimizing...
+Pull: 1.4054446776234297 sigma
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bfVIII</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.042169])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">LVIII</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.975274741860026
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">bfVIII</span><span class="p">,</span> <span class="n">vVIII</span><span class="p">,</span> <span class="n">dVIII</span><span class="p">,</span> <span class="n">LVIII</span><span class="p">,</span> <span class="s1">&#39;../../ellipses/scVIII.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;Scenario VIII, PhD version&#39;</span><span class="p">,</span>
+                     <span class="s1">&#39;Scenario VIII&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="scenario-ix">
+<h3>Scenario IX<a class="headerlink" href="#scenario-ix" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fitIX</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">likelihood_global</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">scenarios</span><span class="o">.</span><span class="n">scIX</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bfIX</span><span class="p">,</span> <span class="n">vIX</span><span class="p">,</span> <span class="n">dIX</span><span class="p">,</span> <span class="n">LIX</span> <span class="o">=</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">fitIX</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.232</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Minimizing...
+Pull: 5.26599813993356 sigma
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bfIX</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.15251954])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">LIX</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>27.730736409783713
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">bfIX</span><span class="p">,</span> <span class="n">vIX</span><span class="p">,</span> <span class="n">dIX</span><span class="p">,</span> <span class="n">LIX</span><span class="p">,</span> <span class="s1">&#39;../../ellipses/scIX.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;Scenario IX, PhD version&#39;</span><span class="p">,</span> <span class="s1">&#39;Scenario IX&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="scenario-x">
+<h3>Scenario X<a class="headerlink" href="#scenario-x" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fitX</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">likelihood_global</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">scenarios</span><span class="o">.</span><span class="n">scX</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bfX</span><span class="p">,</span> <span class="n">vX</span><span class="p">,</span> <span class="n">dX</span><span class="p">,</span> <span class="n">LX</span> <span class="o">=</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">fitX</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.23</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Minimizing...
+Pull: 5.108375385454964 sigma
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bfX</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.15143862])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">LX</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>26.095499078722145
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">bfX</span><span class="p">,</span> <span class="n">vX</span><span class="p">,</span> <span class="n">dX</span><span class="p">,</span> <span class="n">LX</span><span class="p">,</span> <span class="s1">&#39;../../ellipses/scX.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;Scenario X, PhD version&#39;</span><span class="p">,</span> <span class="s1">&#39;Scenario X&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="scenario-xi">
+<h3>Scenario XI<a class="headerlink" href="#scenario-xi" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fitXI</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">likelihood_global</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">scenarios</span><span class="o">.</span><span class="n">scXI</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bfXI</span><span class="p">,</span> <span class="n">vXI</span><span class="p">,</span> <span class="n">dXI</span><span class="p">,</span> <span class="n">LXI</span> <span class="o">=</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">minimum</span><span class="p">(</span><span class="n">fitXI</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.23</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Minimizing...
+Pull: 4.939125552323069 sigma
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bfXI</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.14988535, -0.26939863])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">LXI</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>28.115835013162794
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">bfXI</span><span class="p">,</span> <span class="n">vXI</span><span class="p">,</span> <span class="n">dXI</span><span class="p">,</span> <span class="n">LXI</span><span class="p">,</span> <span class="s1">&#39;../../ellipses/scXI.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;Scenario XI, PhD version&#39;</span><span class="p">,</span> <span class="s1">&#39;Scenario XI&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="pulls-from-scenario-vii">
+<h2>Pulls from Scenario VII<a class="headerlink" href="#pulls-from-scenario-vii" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">flavio.statistics.functions</span> <span class="k">import</span> <span class="n">pull</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pull</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">LI</span><span class="o">-</span><span class="n">LVII</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.069515777973434
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pull</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">LII</span><span class="o">-</span><span class="n">LVII</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.7465708382419334
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pull</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">LIII</span><span class="o">-</span><span class="n">LVII</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.684078019974153
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pull</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">LIV</span><span class="o">-</span><span class="n">LVII</span><span class="p">),</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.421257642139442
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pull</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">LV</span><span class="o">-</span><span class="n">LVII</span><span class="p">),</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.176108779627708
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pull</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">LVI</span><span class="o">-</span><span class="n">LVII</span><span class="p">),</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.8554493613482714
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pull</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">LVIII</span><span class="o">-</span><span class="n">LVII</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.742892497765679
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pull</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">LIX</span><span class="o">-</span><span class="n">LVII</span><span class="p">),</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6205983000239546
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pull</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">LX</span><span class="o">-</span><span class="n">LVII</span><span class="p">),</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.4214005702314143
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pull</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">LXI</span><span class="o">-</span><span class="n">LVII</span><span class="p">),</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.735116045448655e-05
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./PaperSMEFT"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="README.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Fit to SMEFT coefficients I</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="02_LikelihoodPlots.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">02: Likelihood Plots</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          Por Jorge Alda<br/>
+        
+            &copy; Derechos de autor 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

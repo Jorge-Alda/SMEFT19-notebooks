@@ -1,0 +1,934 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>04: Scenario VII &#8212; Jupyter Notebooks for chapters 6 and 7</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Prospects from ILC" href="../PaperILC/README.html" />
+    <link rel="prev" title="03: RK and RD" href="03_RKRD.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Jupyter Notebooks for chapters 6 and 7</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Jupyter Notebooks used for Chapters 6 and 7 of my PhD Thesis
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="README.html">
+   Fit to SMEFT coefficients I
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_Fits.html">
+     01: Fits
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_LikelihoodPlots.html">
+     02: Likelihood Plots
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_RKRD.html">
+     03: RK and RD
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     04: Scenario VII
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../PaperILC/README.html">
+   Prospects from ILC
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PaperILC/01_ILCProspects.html">
+     01: Prospects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PaperILC/02_LikelihoodFits.html">
+     02: Likelihood fits
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PaperILC/03_RKRD.html">
+     03: RK and RD
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../PaperML/README.html">
+   Fits to SMEFT coefficients II and Machine Learning
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PaperML/01_fits.html">
+     01: Fits
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PaperML/02_plotfits.html">
+     02: Likelihood fits
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PaperML/03_RKRD.html">
+     03: RK and RD
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PaperML/04_TrainingDatasets.html">
+     04: Preparing the Training datasets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PaperML/05_Training.html">
+     05: Training the ML algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PaperML/06_correlations.html">
+     06: Correlations
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navegación de palanca" aria-controls="site-navigation"
+                title="Navegación de palanca" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Descarga esta pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/PaperSMEFT/04_ScenarioVII.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
+        title="Modo de pantalla completa"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/Jorge-Alda/SMEFT19/gh-pages?urlpath=tree/jupyter/PaperSMEFT/04_ScenarioVII.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lanzamiento Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenido
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hessian-matrix-and-rotation">
+   Hessian Matrix and rotation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#observables">
+   Observables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#largest-pull-differences">
+     Largest pull differences
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="scenario-vii">
+<h1>04: Scenario VII<a class="headerlink" href="#scenario-vii" title="Permalink to this headline">¶</a></h1>
+<p>In this notebook we take a closer look at Scenario VII and the neighborhood of the best-fit point. The contents of this notebook are used in Section 6.3.1.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">SMEFT19</span>
+<span class="kn">from</span> <span class="nn">SMEFT19.scenarios</span> <span class="k">import</span> <span class="n">scVII</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">flavio.statistics.functions</span> <span class="k">import</span> <span class="n">delta_chi2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dVII</span> <span class="o">=</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;../../ellipses/scVII.yaml&#39;</span><span class="p">)</span>
+<span class="n">bfVII</span> <span class="o">=</span> <span class="n">dVII</span><span class="p">[</span><span class="s1">&#39;bf&#39;</span><span class="p">]</span>
+<span class="n">vVII</span> <span class="o">=</span> <span class="n">dVII</span><span class="p">[</span><span class="s1">&#39;v&#39;</span><span class="p">]</span>
+<span class="n">diagVII</span> <span class="o">=</span> <span class="n">dVII</span><span class="p">[</span><span class="s1">&#39;d&#39;</span><span class="p">]</span>
+<span class="n">LVII</span> <span class="o">=</span> <span class="n">dVII</span><span class="p">[</span><span class="s1">&#39;L&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="hessian-matrix-and-rotation">
+<h2>Hessian Matrix and rotation<a class="headerlink" href="#hessian-matrix-and-rotation" title="Permalink to this headline">¶</a></h2>
+<p>Hessian matrix</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="o">=</span> <span class="n">vVII</span> <span class="o">@</span> <span class="n">diagVII</span> <span class="o">@</span> <span class="n">vVII</span><span class="o">.</span><span class="n">T</span>
+<span class="n">H</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>matrix([[ 3.07343695e+02,  5.67414678e+01, -1.67554446e-01],
+        [ 5.67414678e+01,  6.69617869e+02, -6.39211370e+00],
+        [-1.67554446e-01, -6.39211370e+00,  2.84657606e+01]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Semi-axes of the ellipse</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">delta_chi2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">diagVII</span><span class="p">))</span>
+<span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.35238418, 0.10866589, 0.0721036 ])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Rotation matrix</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vVII</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>matrix([[ 0.00145321,  0.98850595, -0.15117499],
+        [-0.01009681, -0.15115294, -0.98845882],
+        [-0.99994797,  0.00296282,  0.0097611 ]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Extrema of the ellipse</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p1p</span> <span class="o">=</span> <span class="n">bfVII</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">vVII</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="n">l1p</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">likelihood_global</span><span class="p">(</span><span class="n">p1p</span><span class="p">,</span> <span class="n">scVII</span><span class="p">)</span> <span class="o">+</span> <span class="n">LVII</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{p1p}</span><span class="se">\t</span><span class="si">{l1p}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.14921456  0.14609287 -0.62186569]	3.352163783869152
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p1m</span> <span class="o">=</span> <span class="n">bfVII</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">vVII</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="n">l1m</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">likelihood_global</span><span class="p">(</span><span class="n">p1m</span><span class="p">,</span> <span class="n">scVII</span><span class="p">)</span> <span class="o">+</span> <span class="n">LVII</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{p1m}</span><span class="se">\t</span><span class="si">{l1m}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.15023873  0.15320878  0.08286601]	3.39035351767415
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p2p</span> <span class="o">=</span> <span class="n">bfVII</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">vVII</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="n">l2p</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">likelihood_global</span><span class="p">(</span><span class="n">p2p</span><span class="p">,</span> <span class="n">scVII</span><span class="p">)</span> <span class="o">+</span> <span class="n">LVII</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{p2p}</span><span class="se">\t</span><span class="si">{l2p}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.04230977  0.13322566 -0.26917788]	4.2877067971896565
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p2m</span> <span class="o">=</span> <span class="n">bfVII</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">vVII</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="n">l2m</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">likelihood_global</span><span class="p">(</span><span class="n">p2m</span><span class="p">,</span> <span class="n">scVII</span><span class="p">)</span> <span class="o">+</span> <span class="n">LVII</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{p2m}</span><span class="se">\t</span><span class="si">{l2m}</span><span class="s1">&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.25714353  0.16607599 -0.2698218 ]	4.43567222411415
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p3p</span> <span class="o">=</span> <span class="n">bfVII</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">vVII</span><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="n">l3p</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">likelihood_global</span><span class="p">(</span><span class="n">p3p</span><span class="p">,</span> <span class="n">scVII</span><span class="p">)</span> <span class="o">+</span> <span class="n">LVII</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{p3p}</span><span class="se">\t</span><span class="si">{l3p}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.16062691  0.07837939 -0.26879603]	3.70721785960432
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p3m</span> <span class="o">=</span> <span class="n">bfVII</span> <span class="o">-</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">vVII</span><span class="p">[:,</span><span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+<span class="n">l3m</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">likelihood_global</span><span class="p">(</span><span class="n">p3m</span><span class="p">,</span> <span class="n">scVII</span><span class="p">)</span> <span class="o">+</span> <span class="n">LVII</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{p3m}</span><span class="se">\t</span><span class="si">{l3m}</span><span class="s1">&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.13882639  0.22092226 -0.27020365]	3.9698051457436208
+</pre></div>
+</div>
+</div>
+</div>
+<p>Extreme values of each coefficient</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_coeff</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">delta_chi2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">H</span><span class="p">))</span>
+<span class="n">a_coeff</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.10712099, 0.07257269, 0.35198597])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pep</span> <span class="o">=</span> <span class="n">bfVII</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">a_coeff</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">lep</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">likelihood_global</span><span class="p">(</span><span class="n">pep</span><span class="p">,</span> <span class="n">scVII</span><span class="p">)</span> <span class="o">+</span> <span class="n">LVII</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{pep}</span><span class="se">\t</span><span class="si">{lep}</span><span class="s1">&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.04260565  0.14965083 -0.26949984]	4.066948201144271
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pem</span> <span class="o">=</span> <span class="n">bfVII</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">a_coeff</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">lem</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">likelihood_global</span><span class="p">(</span><span class="n">pem</span><span class="p">,</span> <span class="n">scVII</span><span class="p">)</span> <span class="o">+</span> <span class="n">LVII</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{pem}</span><span class="se">\t</span><span class="si">{lem}</span><span class="s1">&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.25684764  0.14965083 -0.26949984]	4.172186500550637
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pmup</span> <span class="o">=</span> <span class="n">bfVII</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">a_coeff</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">lmup</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">likelihood_global</span><span class="p">(</span><span class="n">pmup</span><span class="p">,</span> <span class="n">scVII</span><span class="p">)</span> <span class="o">+</span> <span class="n">LVII</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{pmup}</span><span class="se">\t</span><span class="si">{lmup}</span><span class="s1">&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.14972665  0.22222352 -0.26949984]	4.0763352184390484
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pmum</span> <span class="o">=</span> <span class="n">bfVII</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="n">a_coeff</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">lmum</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">likelihood_global</span><span class="p">(</span><span class="n">pmum</span><span class="p">,</span> <span class="n">scVII</span><span class="p">)</span> <span class="o">+</span> <span class="n">LVII</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{pmum}</span><span class="se">\t</span><span class="si">{lmum}</span><span class="s1">&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.14972665  0.07707813 -0.26949984]	3.784302538404141
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ptaup</span> <span class="o">=</span> <span class="n">bfVII</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">a_coeff</span><span class="p">[</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">ltaup</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">likelihood_global</span><span class="p">(</span><span class="n">ptaup</span><span class="p">,</span> <span class="n">scVII</span><span class="p">)</span> <span class="o">+</span> <span class="n">LVII</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{ptaup}</span><span class="se">\t</span><span class="si">{ltaup}</span><span class="s1">&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.14972665  0.14965083  0.08248613]	3.3907185950610277
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ptaum</span> <span class="o">=</span> <span class="n">bfVII</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">a_coeff</span><span class="p">[</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">ltaum</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">likelihood_global</span><span class="p">(</span><span class="n">ptaum</span><span class="p">,</span> <span class="n">scVII</span><span class="p">)</span> <span class="o">+</span> <span class="n">LVII</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{ptaum}</span><span class="se">\t</span><span class="si">{ltaum}</span><span class="s1">&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.14972665  0.14965083 -0.6214858 ]	3.348779063033696
+</pre></div>
+</div>
+</div>
+</div>
+<p>SM direction</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a_SM</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">delta_chi2</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">bfVII</span> <span class="o">@</span> <span class="n">H</span> <span class="o">@</span> <span class="n">bfVII</span><span class="p">))[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">a_SM</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4011753357898123
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pSMp</span> <span class="o">=</span> <span class="n">bfVII</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">a_SM</span><span class="p">)</span>
+<span class="n">lSMp</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">likelihood_global</span><span class="p">(</span><span class="n">pSMp</span><span class="p">,</span> <span class="n">scVII</span><span class="p">)</span> <span class="o">+</span> <span class="n">LVII</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{pSMp}</span><span class="se">\t</span><span class="si">{lSMp}</span><span class="s1">&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.20979328  0.20968705 -0.37761653]	4.693637892371026
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pSMm</span> <span class="o">=</span> <span class="n">bfVII</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">a_SM</span><span class="p">)</span>
+<span class="n">lSMm</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">likelihood_global</span><span class="p">(</span><span class="n">pSMm</span><span class="p">,</span> <span class="n">scVII</span><span class="p">)</span> <span class="o">+</span> <span class="n">LVII</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{pSMm}</span><span class="se">\t</span><span class="si">{lSMm}</span><span class="s1">&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.08966001  0.08961461 -0.16138315]	4.290914627715015
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="observables">
+<h2>Observables<a class="headerlink" href="#observables" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">SMEFT19.plots</span> <span class="k">import</span> <span class="n">compare_plot</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">compare_plot</span><span class="p">(</span><span class="n">scVII</span><span class="p">,</span> <span class="s1">&#39;../../ellipses/scVII.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;../../plots/pullsVII&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04_ScenarioVII_32_0.png" src="../_images/04_ScenarioVII_32_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">comparepulls</span><span class="o">.</span><span class="n">compare</span><span class="p">(</span><span class="n">scVII</span><span class="p">,</span> <span class="s1">&#39;../../ellipses/scVII.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;../../TeX/pullsVII&#39;</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a class="reference external" href="https://github.com/Jorge-Alda/SMEFT19/blob/master/TeX/standalone_pullsVII.pdf">Link to the table</a></p>
+<div class="section" id="largest-pull-differences">
+<h3>Largest pull differences<a class="headerlink" href="#largest-pull-differences" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">comparepulls</span><span class="o">.</span><span class="n">notablepulls</span><span class="p">(</span><span class="n">scVII</span><span class="p">,</span> <span class="s1">&#39;../../ellipses/scVII.yaml&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Operator 1+
+**********************
+
+5	(&#39;&lt;Rmue&gt;(B+-&gt;Kll)&#39;, 1.1, 6.0)	1.047047303958045
+18	A(Z-&gt;ee)	0.4715343930119273
+58	m_W	0.4101674193073143
+15	AFB(Z-&gt;bb)	0.34506594275712094
+272	GammaZ	0.2736148730604824
+
+
+
+
+Operator 1-
+**********************
+
+5	(&#39;&lt;Rmue&gt;(B+-&gt;Kll)&#39;, 1.1, 6.0)	1.0574043571326897
+18	A(Z-&gt;ee)	0.47067314854461845
+58	m_W	0.410169133754074
+15	AFB(Z-&gt;bb)	0.3445742790040408
+272	GammaZ	0.2740356795426639
+
+
+
+
+Operator 2+
+**********************
+
+202	Ft(26mAl)	1.219473075171127
+339	Ft(34Cl)	0.6749305550318184
+436	Ft(38mK)	0.5709724308787687
+145	Ft(46V)	0.5499316837263112
+5	(&#39;&lt;Rmue&gt;(B+-&gt;Kll)&#39;, 1.1, 6.0)	0.5447533635561222
+
+
+
+
+Operator 2-
+**********************
+
+202	Ft(26mAl)	1.2172939145999349
+339	Ft(34Cl)	0.6737244750586382
+436	Ft(38mK)	0.5699521208498426
+145	Ft(46V)	0.5489489728601077
+5	(&#39;&lt;Rmue&gt;(B+-&gt;Kll)&#39;, 1.1, 6.0)	0.520193293135291
+
+
+
+
+Operator 3+
+**********************
+
+189	BR(tau-&gt;enunu)	0.9974253920008658
+38	BR(tau-&gt;mununu)	0.9671433220556171
+354	sigma_had	0.6863489881909502
+3	Rtaul(B-&gt;D*lnu)	0.42462033122915777
+72	Rtaul(B-&gt;Dlnu)	0.15349094753397646
+
+
+
+
+Operator 3-
+**********************
+
+189	BR(tau-&gt;enunu)	0.9945541390912793
+38	BR(tau-&gt;mununu)	0.9643626858294673
+354	sigma_had	0.683668946427221
+3	Rtaul(B-&gt;D*lnu)	0.4419002450199323
+72	Rtaul(B-&gt;Dlnu)	0.1598326082282726
+
+
+
+
+Axis 1+
+**********************
+
+189	BR(tau-&gt;enunu)	0.9766885986266233
+38	BR(tau-&gt;mununu)	0.9692529999943418
+354	sigma_had	0.6948295138116227
+3	Rtaul(B-&gt;D*lnu)	0.4388966037166004
+72	Rtaul(B-&gt;Dlnu)	0.158745199486295
+
+
+
+
+Axis 1-
+**********************
+
+189	BR(tau-&gt;enunu)	0.9794825268134246
+38	BR(tau-&gt;mununu)	0.9720547332247578
+354	sigma_had	0.6975481312670726
+3	Rtaul(B-&gt;D*lnu)	0.42191994412658923
+72	Rtaul(B-&gt;Dlnu)	0.15252858831577004
+
+
+
+
+Axis 2+
+**********************
+
+5	(&#39;&lt;Rmue&gt;(B+-&gt;Kll)&#39;, 1.1, 6.0)	1.4028027678486763
+18	A(Z-&gt;ee)	0.3553353029014595
+58	m_W	0.29594825763779986
+299	BR(pi+-&gt;enu)	0.2754178068815202
+284	Rmue(B-&gt;D*lnu)	0.2702503872873058
+
+
+
+
+Axis 2-
+**********************
+
+5	(&#39;&lt;Rmue&gt;(B+-&gt;Kll)&#39;, 1.1, 6.0)	1.4505282911519382
+18	A(Z-&gt;ee)	0.35476065690568914
+58	m_W	0.2959493121217155
+299	BR(pi+-&gt;enu)	0.2746525761359327
+284	Rmue(B-&gt;D*lnu)	0.2596141650921076
+
+
+
+
+Axis 3+
+**********************
+
+202	Ft(26mAl)	1.174051125608365
+339	Ft(34Cl)	0.6497912860695126
+436	Ft(38mK)	0.5497053102796049
+145	Ft(46V)	0.5294482719070802
+408	Ft(50Mn)	0.4726530083420578
+
+
+
+
+Axis 3-
+**********************
+
+202	Ft(26mAl)	1.176114690170544
+339	Ft(34Cl)	0.650933388182016
+436	Ft(38mK)	0.5506714968222387
+145	Ft(46V)	0.530378853776639
+408	Ft(50Mn)	0.4734837643261531
+
+
+
+
+SM+
+**********************
+
+5	(&#39;&lt;Rmue&gt;(B+-&gt;Kll)&#39;, 1.1, 6.0)	1.4456709098201241
+202	Ft(26mAl)	0.8337109639334289
+339	Ft(34Cl)	0.4614263447716883
+436	Ft(38mK)	0.39035382200673313
+145	Ft(46V)	0.3759690012611898
+
+
+
+
+SM-
+**********************
+
+5	(&#39;&lt;Rmue&gt;(B+-&gt;Kll)&#39;, 1.1, 6.0)	1.3509121356276814
+202	Ft(26mAl)	0.8324603414866149
+339	Ft(34Cl)	0.4607341742602148
+436	Ft(38mK)	0.38976826505339124
+145	Ft(46V)	0.37540502250521496
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">SMEFT19.plots</span> <span class="k">import</span> <span class="n">evolution_plot</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evolution_plot</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">189</span><span class="p">,</span> <span class="mi">202</span><span class="p">,</span> <span class="mi">299</span><span class="p">],</span> <span class="n">scVII</span><span class="p">,</span> <span class="s1">&#39;../../ellipses/scVII.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;ax1&#39;</span><span class="p">,</span> <span class="s1">&#39;../../plots/evo_ax1&#39;</span><span class="p">,</span>
+               <span class="p">[</span><span class="sa">r</span><span class="s1">&#39;$R_{D^*}^\ell$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$R_{K^+}^{[1.1,6]}$&#39;</span><span class="p">,</span> <span class="s1">&#39;$A_e$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\mathrm</span><span class="si">{BR}</span><span class="s1">(\tau\to e\nu\nu)$&#39;</span><span class="p">,</span>
+                <span class="sa">r</span><span class="s1">&#39;$\mathcal</span><span class="si">{F}</span><span class="s1">t(^</span><span class="si">{26m}</span><span class="s1">\mathrm</span><span class="si">{Al}</span><span class="s1">)$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\mathrm</span><span class="si">{BR}</span><span class="s1">(\pi\to e \nu)$&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04_ScenarioVII_38_0.png" src="../_images/04_ScenarioVII_38_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evolution_plot</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">189</span><span class="p">,</span> <span class="mi">202</span><span class="p">,</span> <span class="mi">299</span><span class="p">],</span> <span class="n">scVII</span><span class="p">,</span> <span class="s1">&#39;../../ellipses/scVII.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;ax2&#39;</span><span class="p">,</span> <span class="s1">&#39;../../plots/evo_ax2&#39;</span><span class="p">,</span>
+               <span class="p">[</span><span class="sa">r</span><span class="s1">&#39;$R_{D^*}^\ell$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$R_{K^+}^{[1.1,6]}$&#39;</span><span class="p">,</span> <span class="s1">&#39;$A_e$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\mathrm</span><span class="si">{BR}</span><span class="s1">(\tau\to e\nu\nu)$&#39;</span><span class="p">,</span>
+                <span class="sa">r</span><span class="s1">&#39;$\mathcal</span><span class="si">{F}</span><span class="s1">t(^</span><span class="si">{26m}</span><span class="s1">\mathrm</span><span class="si">{Al}</span><span class="s1">)$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\mathrm</span><span class="si">{BR}</span><span class="s1">(\pi\to e \nu)$&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04_ScenarioVII_39_0.png" src="../_images/04_ScenarioVII_39_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evolution_plot</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">189</span><span class="p">,</span> <span class="mi">202</span><span class="p">,</span> <span class="mi">299</span><span class="p">],</span> <span class="n">scVII</span><span class="p">,</span> <span class="s1">&#39;../../ellipses/scVII.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;ax3&#39;</span><span class="p">,</span> <span class="s1">&#39;../../plots/evo_ax3&#39;</span><span class="p">,</span>
+               <span class="p">[</span><span class="sa">r</span><span class="s1">&#39;$R_{D^*}^\ell$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$R_{K^+}^{[1.1,6]}$&#39;</span><span class="p">,</span> <span class="s1">&#39;$A_e$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\mathrm</span><span class="si">{BR}</span><span class="s1">(\tau\to e\nu\nu)$&#39;</span><span class="p">,</span>
+                <span class="sa">r</span><span class="s1">&#39;$\mathcal</span><span class="si">{F}</span><span class="s1">t(^</span><span class="si">{26m}</span><span class="s1">\mathrm</span><span class="si">{Al}</span><span class="s1">)$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\mathrm</span><span class="si">{BR}</span><span class="s1">(\pi\to e \nu)$&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04_ScenarioVII_40_0.png" src="../_images/04_ScenarioVII_40_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evolution_plot</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">189</span><span class="p">,</span> <span class="mi">202</span><span class="p">,</span> <span class="mi">299</span><span class="p">],</span> <span class="n">scVII</span><span class="p">,</span> <span class="s1">&#39;../../ellipses/scVII.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;sm&#39;</span><span class="p">,</span> <span class="s1">&#39;../../plots/evo_sm&#39;</span><span class="p">,</span>
+               <span class="p">[</span><span class="sa">r</span><span class="s1">&#39;$R_{D^*}^\ell$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$R_{K^+}^{[1.1,6]}$&#39;</span><span class="p">,</span> <span class="s1">&#39;$A_e$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\mathrm</span><span class="si">{BR}</span><span class="s1">(\tau\to e\nu\nu)$&#39;</span><span class="p">,</span>
+                <span class="sa">r</span><span class="s1">&#39;$\mathcal</span><span class="si">{F}</span><span class="s1">t(^</span><span class="si">{26m}</span><span class="s1">\mathrm</span><span class="si">{Al}</span><span class="s1">)$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\mathrm</span><span class="si">{BR}</span><span class="s1">(\pi\to e \nu)$&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/04_ScenarioVII_41_0.png" src="../_images/04_ScenarioVII_41_0.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./PaperSMEFT"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="03_RKRD.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">03: RK and RD</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../PaperILC/README.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Prospects from ILC</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          Por Jorge Alda<br/>
+        
+            &copy; Derechos de autor 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>

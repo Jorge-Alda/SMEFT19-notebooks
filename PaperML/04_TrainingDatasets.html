@@ -1,0 +1,953 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>04: Preparing the Training datasets &#8212; Jupyter Notebooks for chapters 6 and 7</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="05: Training the ML algorithm" href="05_Training.html" />
+    <link rel="prev" title="03: RK and RD" href="03_RKRD.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Jupyter Notebooks for chapters 6 and 7</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../README.html">
+   Jupyter Notebooks used for Chapters 6 and 7 of my PhD Thesis
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../PaperSMEFT/README.html">
+   Fit to SMEFT coefficients I
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PaperSMEFT/01_Fits.html">
+     01: Fits
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PaperSMEFT/02_LikelihoodPlots.html">
+     02: Likelihood Plots
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PaperSMEFT/03_RKRD.html">
+     03: RK and RD
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PaperSMEFT/04_ScenarioVII.html">
+     04: Scenario VII
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../PaperILC/README.html">
+   Prospects from ILC
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PaperILC/01_ILCProspects.html">
+     01: Prospects
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PaperILC/02_LikelihoodFits.html">
+     02: Likelihood fits
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../PaperILC/03_RKRD.html">
+     03: RK and RD
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="README.html">
+   Fits to SMEFT coefficients II and Machine Learning
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_fits.html">
+     01: Fits
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_plotfits.html">
+     02: Likelihood fits
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_RKRD.html">
+     03: RK and RD
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     04: Preparing the Training datasets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05_Training.html">
+     05: Training the ML algorithm
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06_correlations.html">
+     06: Correlations
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navegación de palanca" aria-controls="site-navigation"
+                title="Navegación de palanca" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Descarga esta pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/PaperML/04_TrainingDatasets.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
+        title="Modo de pantalla completa"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/Jorge-Alda/SMEFT19/gh-pages?urlpath=tree/jupyter/PaperML/04_TrainingDatasets.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lanzamiento Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenido
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#d-scans">
+   2D Scans
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#random-points">
+   Random points
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="preparing-the-training-datasets">
+<h1>04: Preparing the Training datasets<a class="headerlink" href="#preparing-the-training-datasets" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="d-scans">
+<h2>2D Scans<a class="headerlink" href="#d-scans" title="Permalink to this headline">¶</a></h2>
+<p>The first set of data that we will include in the training datasets were used for <a class="reference external" href="https://github.com/Jorge-Alda/SMEFT19/blob/master/jupyter/PaperML/02_plotfits.ipynb">the likelihood plots</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">SMEFT19</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dbf</span> <span class="o">=</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;../../ellipses/rotBII.yaml&#39;</span><span class="p">)</span>
+<span class="n">bf</span> <span class="o">=</span> <span class="n">dbf</span><span class="p">[</span><span class="s1">&#39;bf&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_albl</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../likelihood/likelihood_rotBII_l.dat&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_albl</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x</th>
+      <th>y</th>
+      <th>fast_likelihood_quarks.yaml</th>
+      <th>fast_likelihood_leptons.yaml</th>
+      <th>likelihood_ewpt.yaml</th>
+      <th>likelihood_eeww.yaml</th>
+      <th>likelihood_lept.yaml</th>
+      <th>likelihood_rd_rds.yaml</th>
+      <th>likelihood_lfu_fccc.yaml</th>
+      <th>likelihood_lfu_fcnc.yaml</th>
+      <th>likelihood_bcpv.yaml</th>
+      <th>likelihood_bqnunu.yaml</th>
+      <th>likelihood_lfv.yaml</th>
+      <th>likelihood_zlfv.yaml</th>
+      <th>likelihood_higgs.yaml</th>
+      <th>custom_beta</th>
+      <th>global</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-0.156</td>
+      <td>-0.020800</td>
+      <td>5.918998</td>
+      <td>-0.851396</td>
+      <td>-0.090145</td>
+      <td>-0.000485</td>
+      <td>-0.000005</td>
+      <td>12.785751</td>
+      <td>-0.011174</td>
+      <td>-68.0</td>
+      <td>0.004540</td>
+      <td>0.43596</td>
+      <td>-121.704256</td>
+      <td>-0.000017</td>
+      <td>0.000566</td>
+      <td>-0.001531</td>
+      <td>-171.513194</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.156</td>
+      <td>-0.019951</td>
+      <td>5.997012</td>
+      <td>-0.851443</td>
+      <td>-0.090180</td>
+      <td>-0.000479</td>
+      <td>-0.000005</td>
+      <td>12.785834</td>
+      <td>-0.011124</td>
+      <td>-68.0</td>
+      <td>0.004587</td>
+      <td>0.43596</td>
+      <td>-103.525727</td>
+      <td>-0.000017</td>
+      <td>0.000565</td>
+      <td>-0.001494</td>
+      <td>-153.256511</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.156</td>
+      <td>-0.019102</td>
+      <td>6.071288</td>
+      <td>-0.851487</td>
+      <td>-0.090214</td>
+      <td>-0.000474</td>
+      <td>-0.000005</td>
+      <td>12.785913</td>
+      <td>-0.011077</td>
+      <td>-68.0</td>
+      <td>0.004632</td>
+      <td>0.43596</td>
+      <td>-87.522157</td>
+      <td>-0.000017</td>
+      <td>0.000564</td>
+      <td>-0.001459</td>
+      <td>-137.178532</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.156</td>
+      <td>-0.018253</td>
+      <td>6.141888</td>
+      <td>-0.851530</td>
+      <td>-0.090246</td>
+      <td>-0.000468</td>
+      <td>-0.000005</td>
+      <td>12.785989</td>
+      <td>-0.011031</td>
+      <td>-68.0</td>
+      <td>0.004676</td>
+      <td>0.43596</td>
+      <td>-73.513089</td>
+      <td>-0.000017</td>
+      <td>0.000564</td>
+      <td>-0.001425</td>
+      <td>-123.098736</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-0.156</td>
+      <td>-0.017404</td>
+      <td>6.208871</td>
+      <td>-0.851571</td>
+      <td>-0.090277</td>
+      <td>-0.000463</td>
+      <td>-0.000005</td>
+      <td>12.786061</td>
+      <td>-0.010988</td>
+      <td>-68.0</td>
+      <td>0.004717</td>
+      <td>0.43596</td>
+      <td>-61.325806</td>
+      <td>-0.000017</td>
+      <td>0.000563</td>
+      <td>-0.001393</td>
+      <td>-110.844348</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfsamplel</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numpoints</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_albl</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfsamplel</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">bf</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">*</span><span class="n">numpoints</span>
+<span class="n">dfsamplel</span><span class="p">[</span><span class="s1">&#39;al&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_albl</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
+<span class="n">dfsamplel</span><span class="p">[</span><span class="s1">&#39;bl&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_albl</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span>
+<span class="n">dfsamplel</span><span class="p">[</span><span class="s1">&#39;aq&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">bf</span><span class="p">[</span><span class="mi">3</span><span class="p">]]</span><span class="o">*</span><span class="n">numpoints</span>
+<span class="n">dfsamplel</span><span class="p">[</span><span class="s1">&#39;bq&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">bf</span><span class="p">[</span><span class="mi">4</span><span class="p">]]</span><span class="o">*</span><span class="n">numpoints</span>
+<span class="n">dfsamplel</span><span class="p">[</span><span class="s1">&#39;likelihood&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_albl</span><span class="p">[</span><span class="s1">&#39;global&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfsamplel</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>C</th>
+      <th>al</th>
+      <th>bl</th>
+      <th>aq</th>
+      <th>bq</th>
+      <th>likelihood</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-0.134958</td>
+      <td>-0.156</td>
+      <td>-0.020800</td>
+      <td>-0.051806</td>
+      <td>0.729542</td>
+      <td>-171.513194</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.134958</td>
+      <td>-0.156</td>
+      <td>-0.019951</td>
+      <td>-0.051806</td>
+      <td>0.729542</td>
+      <td>-153.256511</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.134958</td>
+      <td>-0.156</td>
+      <td>-0.019102</td>
+      <td>-0.051806</td>
+      <td>0.729542</td>
+      <td>-137.178532</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.134958</td>
+      <td>-0.156</td>
+      <td>-0.018253</td>
+      <td>-0.051806</td>
+      <td>0.729542</td>
+      <td>-123.098736</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-0.134958</td>
+      <td>-0.156</td>
+      <td>-0.017404</td>
+      <td>-0.051806</td>
+      <td>0.729542</td>
+      <td>-110.844348</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfsamplel</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;../../samples/samplealbl.dat&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_aqbq</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;../../likelihood/likelihood_rotBII_q.dat&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">data_aqbq</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>x</th>
+      <th>y</th>
+      <th>fast_likelihood_quarks.yaml</th>
+      <th>fast_likelihood_leptons.yaml</th>
+      <th>likelihood_ewpt.yaml</th>
+      <th>likelihood_eeww.yaml</th>
+      <th>likelihood_lept.yaml</th>
+      <th>likelihood_rd_rds.yaml</th>
+      <th>likelihood_lfu_fccc.yaml</th>
+      <th>likelihood_lfu_fcnc.yaml</th>
+      <th>likelihood_bcpv.yaml</th>
+      <th>likelihood_bqnunu.yaml</th>
+      <th>likelihood_lfv.yaml</th>
+      <th>likelihood_zlfv.yaml</th>
+      <th>likelihood_higgs.yaml</th>
+      <th>custom_beta</th>
+      <th>global</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-0.156</td>
+      <td>-0.560000</td>
+      <td>-184.042972</td>
+      <td>-1.474584</td>
+      <td>-0.179997</td>
+      <td>0.000009</td>
+      <td>-0.000001</td>
+      <td>-23.618556</td>
+      <td>0.041265</td>
+      <td>-16.459603</td>
+      <td>-0.004722</td>
+      <td>-0.412635</td>
+      <td>-0.044410</td>
+      <td>-0.000004</td>
+      <td>0.000200</td>
+      <td>0.000826</td>
+      <td>-226.196009</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.156</td>
+      <td>-0.496327</td>
+      <td>-147.144271</td>
+      <td>-1.395568</td>
+      <td>-0.196670</td>
+      <td>0.000029</td>
+      <td>-0.000001</td>
+      <td>-21.194040</td>
+      <td>0.037345</td>
+      <td>-15.152440</td>
+      <td>-0.004775</td>
+      <td>-0.384979</td>
+      <td>-0.027611</td>
+      <td>-0.000004</td>
+      <td>0.000205</td>
+      <td>0.000815</td>
+      <td>-185.462779</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.156</td>
+      <td>-0.432653</td>
+      <td>-110.755733</td>
+      <td>-1.314976</td>
+      <td>-0.212852</td>
+      <td>0.000048</td>
+      <td>-0.000002</td>
+      <td>-18.432544</td>
+      <td>0.032939</td>
+      <td>-13.523368</td>
+      <td>-0.004829</td>
+      <td>-0.351283</td>
+      <td>-0.017401</td>
+      <td>-0.000004</td>
+      <td>0.000209</td>
+      <td>0.000820</td>
+      <td>-144.579793</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.156</td>
+      <td>-0.368980</td>
+      <td>-77.490612</td>
+      <td>-1.233929</td>
+      <td>-0.228057</td>
+      <td>0.000066</td>
+      <td>-0.000002</td>
+      <td>-15.375247</td>
+      <td>0.028047</td>
+      <td>-11.784730</td>
+      <td>-0.004878</td>
+      <td>-0.311083</td>
+      <td>-0.011184</td>
+      <td>-0.000004</td>
+      <td>0.000213</td>
+      <td>0.000842</td>
+      <td>-106.411399</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-0.156</td>
+      <td>-0.305306</td>
+      <td>-49.622194</td>
+      <td>-1.153607</td>
+      <td>-0.241742</td>
+      <td>0.000082</td>
+      <td>-0.000002</td>
+      <td>-12.088953</td>
+      <td>0.022686</td>
+      <td>-9.811831</td>
+      <td>-0.004915</td>
+      <td>-0.264163</td>
+      <td>-0.007121</td>
+      <td>-0.000004</td>
+      <td>0.000217</td>
+      <td>0.000881</td>
+      <td>-73.171546</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfsampleq</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">()</span>
+<span class="n">numpoints</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">data_aqbq</span><span class="p">)</span>
+<span class="n">dfsampleq</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">bf</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">*</span><span class="n">numpoints</span>
+<span class="n">dfsampleq</span><span class="p">[</span><span class="s1">&#39;al&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">bf</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">*</span><span class="n">numpoints</span>
+<span class="n">dfsampleq</span><span class="p">[</span><span class="s1">&#39;bl&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">bf</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span><span class="o">*</span><span class="n">numpoints</span>
+<span class="n">dfsampleq</span><span class="p">[</span><span class="s1">&#39;aq&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_aqbq</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
+<span class="n">dfsampleq</span><span class="p">[</span><span class="s1">&#39;bq&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_aqbq</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span>
+<span class="n">dfsampleq</span><span class="p">[</span><span class="s1">&#39;likelihood&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data_aqbq</span><span class="p">[</span><span class="s1">&#39;global&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfsampleq</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>C</th>
+      <th>al</th>
+      <th>bl</th>
+      <th>aq</th>
+      <th>bq</th>
+      <th>likelihood</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-0.134958</td>
+      <td>0.069719</td>
+      <td>1.155534e-08</td>
+      <td>-0.156</td>
+      <td>-0.560000</td>
+      <td>-226.196009</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.134958</td>
+      <td>0.069719</td>
+      <td>1.155534e-08</td>
+      <td>-0.156</td>
+      <td>-0.496327</td>
+      <td>-185.462779</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.134958</td>
+      <td>0.069719</td>
+      <td>1.155534e-08</td>
+      <td>-0.156</td>
+      <td>-0.432653</td>
+      <td>-144.579793</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.134958</td>
+      <td>0.069719</td>
+      <td>1.155534e-08</td>
+      <td>-0.156</td>
+      <td>-0.368980</td>
+      <td>-106.411399</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-0.134958</td>
+      <td>0.069719</td>
+      <td>1.155534e-08</td>
+      <td>-0.156</td>
+      <td>-0.305306</td>
+      <td>-73.171546</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfsampleq</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;../../samples/sampleaqbq.dat&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="random-points">
+<h2>Random points<a class="headerlink" href="#random-points" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tqdm.notebook</span> <span class="k">import</span> <span class="n">tqdm</span>
+<span class="kn">from</span> <span class="nn">parscanning</span> <span class="k">import</span> <span class="n">RandomScan</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">RS</span> <span class="o">=</span> <span class="n">RandomScan</span><span class="p">(</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">likelihood_global</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.22</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.15</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.03</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.12</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+                <span class="p">[</span><span class="o">-</span><span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.075</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">],</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tqdm</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">111</span><span class="p">)):</span>
+    <span class="n">RS</span><span class="o">.</span><span class="n">run_mp</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">scenarios</span><span class="o">.</span><span class="n">rotBII</span><span class="p">)</span>
+    <span class="n">RS</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;../../samples/randompoints.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;at&#39;</span><span class="p">)</span>
+    <span class="n">RS</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "6624ee1be8504a0aa71c8c861e2984d3", "version_major": 2, "version_minor": 0}
+</script><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./PaperML"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="03_RKRD.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">03: RK and RD</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="05_Training.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">05: Training the ML algorithm</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          Por Jorge Alda<br/>
+        
+            &copy; Derechos de autor 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
