@@ -1,9 +1,18 @@
 title: "Jupyter Notebooks for chapters 6 and 7"
 author: "Jorge Alda"
+copyright: "2021. MIT License"
 execute:
     execute_notebooks: "off"
     
 repository:
-    url: "https://github.com/Jorge-Alda/SMEFT19"
-    path_to_book: "jupyter"
-    branch: "gh-pages"
+    url: "https://github.com/Jorge-Alda/SMEFT19-notebooks"
+    path_to_book: ""
+    branch: "master"
+    
+html:
+    use_repository_button: true
+    use_issues_button: true
+    
+sphinx:
+    config:
+        language: "en"
