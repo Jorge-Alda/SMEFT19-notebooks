@@ -36,7 +36,7 @@ This series of notebooks contain all the code to reproduce the data in Section 6
     * $R_{K^{(*)}}$: [(pdf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19/master/plots/RKplot.pdf) | [(pgf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19/master/plots/RKplot.pgf)
     * $R_{D^{(*)}}$: [(pdf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19/master/plots/RDplot.pdf) | [(pgf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19/master/plots/RDplot.pgf)
 * Plot of the pulls for every observable in Scenario VII [(pdf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19/master/plots/pullsVII.pdf) | [(pgf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19/master/plots/pullsVII.pgf)
-* [List of the pulls for every observable in Scenario VII](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19/master/TeX/standalone_pullsVII.pdf)
+* List of the pulls for every observable in Scenario VII: [(pdf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19/master/TeX/standalone_pullsVII.pdf) | [(tex)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19/master/TeX/pullsVII.tex)
 * Evolution of some observables along the axes of the ellipsoid:
     * Axis 1: [(pdf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19/master/plots/evo_ax1.pdf) | [(pgf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19/master/plots/evo_ax1.pgf)
     * Axis 2: [(pdf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19/master/plots/evo_ax2.pdf) | [(pgf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19/master/plots/evo_ax2.pgf)

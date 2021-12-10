@@ -24,7 +24,7 @@ This series of notebooks contain all the code to reproduce the data in Section 6
     * Scenario IV: [(pdf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19/master/plots/scIV_ILC.pdf) | [(pgf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19/master/plots/scIV_ILC.pgf)
     * Scenario V: [(pdf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19/master/plots/scV_ILC.pdf) | [(pgf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19/master/plots/scV_ILC.pgf)
     * Scenario VI: [(pdf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19/master/plots/scVI_ILC.pdf) | [(pgf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19/master/plots/scVI_ILC.pgf)
-    * Scenario XI: [(pdf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19/master/plots/scIV_ILC.pdf) | [(pgf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19/master/plots/scXI_ILC.pgf)
+    * Scenario XI: [(pdf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19/master/plots/scXI_ILC.pdf) | [(pgf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19/master/plots/scXI_ILC.pgf)
 * $R_{K^{(*)}}$ and $R_{D^{(*)}}$ observables:
     * [Scenario IV](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19/master/observables/obsIV_ILC.yaml)
     * [Scenario VII](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19/master/observables/obsVII_ILC.yaml)
