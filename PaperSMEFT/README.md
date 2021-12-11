@@ -10,17 +10,17 @@ This series of notebooks contain all the code to reproduce the data in Section 6
 ## Additional files
 
 * Hessian ellipse data for:
-   * [Scenario I](https://github.com/Jorge-Alda/SMEFT19-notebooks/raw/master/data/ellipses/scI.yaml)
-   * [Scenario II](https://github.com/Jorge-Alda/SMEFT19-notebooks/raw/master/data/ellipses/scII.yaml)
-   * [Scenario III](https://github.com/Jorge-Alda/SMEFT19-notebooks/raw/master/data/ellipses/scIII.yaml)
-   * [Scenario IV](https://github.com/Jorge-Alda/SMEFT19-notebooks/raw/master/data/ellipses/scIV.yaml)
-   * [Scenario V](https://github.com/Jorge-Alda/SMEFT19-notebooks/raw/master/data/ellipses/scV.yaml)
-   * [Scenario VI](https://github.com/Jorge-Alda/SMEFT19-notebooks/raw/master/data/ellipses/scVI.yaml)
-   * [Scenario VII](https://github.com/Jorge-Alda/SMEFT19-notebooks/raw/master/data/ellipses/scVII.yaml)
-   * [Scenario VIII](https://github.com/Jorge-Alda/SMEFT19-notebooks/raw/master/data/ellipses/scVIII.yaml)
-   * [Scenario IX](https://github.com/Jorge-Alda/SMEFT19-notebooks/raw/master/data/ellipses/scIX.yaml)
-   * [Scenario X](https://github.com/Jorge-Alda/SMEFT19-notebooks/raw/master/data/ellipses/scX.yaml)
-   * [Scenario XI](https://github.com/Jorge-Alda/SMEFT19-notebooks/raw/master/data/ellipses/scXI.yaml)
+   * [Scenario I](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/master/data/ellipses/scI.yaml)
+   * [Scenario II](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/master/data/ellipses/scII.yaml)
+   * [Scenario III](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/master/data/ellipses/scIII.yaml)
+   * [Scenario IV](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/master/data/ellipses/scIV.yaml)
+   * [Scenario V](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/master/data/ellipses/scV.yaml)
+   * [Scenario VI](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/master/data/ellipses/scVI.yaml)
+   * [Scenario VII](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/master/data/ellipses/scVII.yaml)
+   * [Scenario VIII](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/master/data/ellipses/scVIII.yaml)
+   * [Scenario IX](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/master/data/ellipses/scIX.yaml)
+   * [Scenario X](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/master/data/ellipses/scX.yaml)
+   * [Scenario XI](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/master/data/ellipses/scXI.yaml)
 * Likelihood plots for:
    * Scenario IV: [(pdf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/master/data/plots/scIVbeta.pdf) | [(pgf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/master/data/plots/scIVbeta.pgf)
    * Scenario V: [(pdf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/master/data/plots/scV.pdf) | [(pgf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/master/data/plots/scV.pgf)
