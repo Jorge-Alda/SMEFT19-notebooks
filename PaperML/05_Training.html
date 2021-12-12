@@ -336,15 +336,15 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;../../ellipses/rotBII.yaml&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;../data/ellipses/rotBII.yaml&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ML</span> <span class="o">=</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">ml</span><span class="o">.</span><span class="n">train</span><span class="p">([</span><span class="s1">&#39;../../samples/randompoints.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;../../samples/samplealbl.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;../../samples/sampleaqbq.dat&#39;</span><span class="p">],</span>
-                 <span class="s1">&#39;../../samples/validationpoints.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;../../MLmodels/xgb_lh.json&#39;</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;bf&#39;</span><span class="p">],</span> <span class="n">headers</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ML</span> <span class="o">=</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">ml</span><span class="o">.</span><span class="n">train</span><span class="p">([</span><span class="s1">&#39;../data/samples/randompoints.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;../data/samples/samplealbl.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;../data/samples/sampleaqbq.dat&#39;</span><span class="p">],</span>
+                 <span class="s1">&#39;../data/samples/validationpoints.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;../data/MLmodels/xgb_lh.json&#39;</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;bf&#39;</span><span class="p">],</span> <span class="n">headers</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -359,7 +359,7 @@
 <p>Here we check that the ML approximation correctly reproduces the likelihood of the datapoints</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">ml</span><span class="o">.</span><span class="n">regr</span><span class="p">(</span><span class="n">ML</span><span class="p">,</span> <span class="s1">&#39;../../samples/validationpoints.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;../../plots/regression_xgb&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">ml</span><span class="o">.</span><span class="n">regr</span><span class="p">(</span><span class="n">ML</span><span class="p">,</span> <span class="s1">&#39;../data/samples/validationpoints.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;../data/plots/regression_xgb&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -404,8 +404,8 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">pad</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;../../plots/hist_xgb.pdf&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;../../plots/hist_xgb.pgf&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;../data/plots/hist_xgb.pdf&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;../data/plots/hist_xgb.pgf&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -425,7 +425,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ML</span> <span class="o">=</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">ml</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s1">&#39;../../MLmodels/xgb_lh.json&#39;</span><span class="p">,</span> <span class="s1">&#39;../../samples/validationpoints.dat&#39;</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;bf&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ML</span> <span class="o">=</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">ml</span><span class="o">.</span><span class="n">load_model</span><span class="p">(</span><span class="s1">&#39;../data/MLmodels/xgb_lh.json&#39;</span><span class="p">,</span> <span class="s1">&#39;../data/samples/validationpoints.dat&#39;</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;bf&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -434,14 +434,14 @@
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dfnewpoints</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">newpoints</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;al&#39;</span><span class="p">,</span> <span class="s1">&#39;bl&#39;</span><span class="p">,</span> <span class="s1">&#39;aq&#39;</span><span class="p">,</span> <span class="s1">&#39;bq&#39;</span><span class="p">])</span>
 <span class="n">dfnewpoints</span><span class="p">[</span><span class="s1">&#39;logL&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ML</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">dfnewpoints</span><span class="p">)</span>
-<span class="n">dfnewpoints</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;../../samples/mlpoints.dat&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">dfnewpoints</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;../data/samples/mlpoints.dat&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">ml</span><span class="o">.</span><span class="n">SHAP_bf</span><span class="p">(</span><span class="s1">&#39;../../MLmodels/xgb_lh.json&#39;</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;bf&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">ml</span><span class="o">.</span><span class="n">SHAP_bf</span><span class="p">(</span><span class="s1">&#39;../data/MLmodels/xgb_lh.json&#39;</span><span class="p">,</span> <span class="n">d</span><span class="p">[</span><span class="s1">&#39;bf&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -458,7 +458,7 @@ Total prediction: 27.768725395202637
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">ml</span><span class="o">.</span><span class="n">SHAP_summary</span><span class="p">(</span><span class="s1">&#39;../../MLmodels/xgb_lh.json&#39;</span><span class="p">,</span> <span class="s1">&#39;../../samples/mlpoints.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;../../plots/SHAP_summary&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">ml</span><span class="o">.</span><span class="n">SHAP_summary</span><span class="p">(</span><span class="s1">&#39;../data/MLmodels/xgb_lh.json&#39;</span><span class="p">,</span> <span class="s1">&#39;../data/samples/mlpoints.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;../data/plots/SHAP_summary&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -484,14 +484,14 @@ Total prediction: 27.768725395202637
 <span class="n">maxx</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.025</span><span class="p">,</span> <span class="mf">0.07</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">]</span>
 <span class="n">ticks</span> <span class="o">=</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">minx</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">maxx</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="mi">5</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-    <span class="n">SMEFT19</span><span class="o">.</span><span class="n">ml</span><span class="o">.</span><span class="n">SHAP_param</span><span class="p">(</span><span class="s1">&#39;../../MLmodels/xgb_lh.json&#39;</span><span class="p">,</span> <span class="s1">&#39;../../samples/mlpoints.dat&#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">SMEFT19</span><span class="o">.</span><span class="n">ml</span><span class="o">.</span><span class="n">SHAP_param</span><span class="p">(</span><span class="s1">&#39;../data/MLmodels/xgb_lh.json&#39;</span><span class="p">,</span> <span class="s1">&#39;../data/samples/mlpoints.dat&#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">ticks</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="n">minx</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">maxx</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">pad</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;../../plots/SHAP_</span><span class="si">{names[i]}</span><span class="s1">.pdf&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;../data/plots/SHAP_</span><span class="si">{names[i]}</span><span class="s1">.pdf&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

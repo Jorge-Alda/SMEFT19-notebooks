@@ -398,7 +398,7 @@ We first calculate the likelihood in a grid and save the results.</p>
 <span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
     <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
     <span class="n">GS</span><span class="o">.</span><span class="n">run_mp</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">scIV</span><span class="p">)</span>
-<span class="n">GS</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s1">&#39;../../likelihood/likelihood_IV.dat&#39;</span><span class="p">)</span>
+<span class="n">GS</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s1">&#39;../data/likelihood/likelihood_IV.dat&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -418,7 +418,7 @@ We first calculate the likelihood in a grid and save the results.</p>
 <span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
     <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
     <span class="n">GS</span><span class="o">.</span><span class="n">run_mp</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">scV</span><span class="p">)</span>
-<span class="n">GS</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s1">&#39;../../likelihood/likelihood_V.dat&#39;</span><span class="p">)</span>
+<span class="n">GS</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s1">&#39;../data/likelihood/likelihood_V.dat&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -438,7 +438,7 @@ We first calculate the likelihood in a grid and save the results.</p>
 <span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
     <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
     <span class="n">GS</span><span class="o">.</span><span class="n">run_mp</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">scVI</span><span class="p">)</span>
-<span class="n">GS</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s1">&#39;../../likelihood/likelihood_VI.dat&#39;</span><span class="p">)</span>
+<span class="n">GS</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s1">&#39;../data/likelihood/likelihood_VI.dat&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -458,7 +458,7 @@ We first calculate the likelihood in a grid and save the results.</p>
 <span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
     <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
     <span class="n">GS</span><span class="o">.</span><span class="n">run_mp</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">scXI</span><span class="p">)</span>
-<span class="n">GS</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s1">&#39;../../likelihood/likelihood_XI.dat&#39;</span><span class="p">)</span>
+<span class="n">GS</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s1">&#39;../data/likelihood/likelihood_XI.dat&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -500,9 +500,9 @@ We first calculate the likelihood in a grid and save the results.</p>
 <h3>Scenario IV<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">likelihood_plot</span><span class="p">(</span><span class="n">read_meshgrid</span><span class="p">(</span><span class="s1">&#39;../../likelihood/likelihood_IV.dat&#39;</span><span class="p">),</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">likelihood_plot</span><span class="p">(</span><span class="n">read_meshgrid</span><span class="p">(</span><span class="s1">&#39;../data/likelihood/likelihood_IV.dat&#39;</span><span class="p">),</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span>
                 <span class="p">[</span><span class="sa">r</span><span class="s1">&#39;$C_{\ell q}^e$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$C_{\ell q}^\mu$&#39;</span><span class="p">],</span> <span class="n">locleg</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
-                <span class="n">bf</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.1511</span><span class="p">,</span><span class="mf">0.152</span><span class="p">],</span> <span class="n">widths</span><span class="o">=</span><span class="p">[</span><span class="mf">1.5</span><span class="p">,]</span><span class="o">*</span><span class="mi">4</span><span class="p">,</span> <span class="n">fout</span><span class="o">=</span><span class="s1">&#39;../../plots/scIV&#39;</span><span class="p">)</span>
+                <span class="n">bf</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.1511</span><span class="p">,</span><span class="mf">0.152</span><span class="p">],</span> <span class="n">widths</span><span class="o">=</span><span class="p">[</span><span class="mf">1.5</span><span class="p">,]</span><span class="o">*</span><span class="mi">4</span><span class="p">,</span> <span class="n">fout</span><span class="o">=</span><span class="s1">&#39;../data/plots/scIV&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -515,9 +515,9 @@ We first calculate the likelihood in a grid and save the results.</p>
 <h3>Scenario V<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">likelihood_plot</span><span class="p">(</span><span class="n">read_meshgrid</span><span class="p">(</span><span class="s1">&#39;../../likelihood/likelihood_V.dat&#39;</span><span class="p">),</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">likelihood_plot</span><span class="p">(</span><span class="n">read_meshgrid</span><span class="p">(</span><span class="s1">&#39;../data/likelihood/likelihood_V.dat&#39;</span><span class="p">),</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span>
                 <span class="p">[</span><span class="sa">r</span><span class="s1">&#39;$C_{\ell q}^e$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$C_{\ell q}^\tau$&#39;</span><span class="p">],</span> <span class="n">locleg</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
-                <span class="n">bf</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.1467</span><span class="p">,</span><span class="o">-</span><span class="mf">0.2998</span><span class="p">],</span> <span class="n">widths</span><span class="o">=</span><span class="p">[</span><span class="mf">1.5</span><span class="p">,]</span><span class="o">*</span><span class="mi">4</span><span class="p">,</span> <span class="n">fout</span><span class="o">=</span><span class="s1">&#39;../../plots/scV&#39;</span><span class="p">)</span>
+                <span class="n">bf</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.1467</span><span class="p">,</span><span class="o">-</span><span class="mf">0.2998</span><span class="p">],</span> <span class="n">widths</span><span class="o">=</span><span class="p">[</span><span class="mf">1.5</span><span class="p">,]</span><span class="o">*</span><span class="mi">4</span><span class="p">,</span> <span class="n">fout</span><span class="o">=</span><span class="s1">&#39;../data/plots/scV&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -530,9 +530,9 @@ We first calculate the likelihood in a grid and save the results.</p>
 <h3>Scenario VI<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">likelihood_plot</span><span class="p">(</span><span class="n">read_meshgrid</span><span class="p">(</span><span class="s1">&#39;../../likelihood/likelihood_VI.dat&#39;</span><span class="p">),</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">likelihood_plot</span><span class="p">(</span><span class="n">read_meshgrid</span><span class="p">(</span><span class="s1">&#39;../data/likelihood/likelihood_VI.dat&#39;</span><span class="p">),</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span>
                 <span class="p">[</span><span class="sa">r</span><span class="s1">&#39;$C_{\ell q}^\mu$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$C_{\ell q}^\tau$&#39;</span><span class="p">],</span> <span class="n">locleg</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span>
-                <span class="n">bf</span><span class="o">=</span><span class="p">[</span><span class="mf">0.152</span><span class="p">,</span><span class="o">-</span><span class="mf">0.271</span><span class="p">],</span> <span class="n">widths</span><span class="o">=</span><span class="p">[</span><span class="mf">1.5</span><span class="p">,]</span><span class="o">*</span><span class="mi">4</span><span class="p">,</span> <span class="n">fout</span><span class="o">=</span><span class="s1">&#39;../../plots/scVI&#39;</span><span class="p">)</span>
+                <span class="n">bf</span><span class="o">=</span><span class="p">[</span><span class="mf">0.152</span><span class="p">,</span><span class="o">-</span><span class="mf">0.271</span><span class="p">],</span> <span class="n">widths</span><span class="o">=</span><span class="p">[</span><span class="mf">1.5</span><span class="p">,]</span><span class="o">*</span><span class="mi">4</span><span class="p">,</span> <span class="n">fout</span><span class="o">=</span><span class="s1">&#39;../data/plots/scVI&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -545,9 +545,9 @@ We first calculate the likelihood in a grid and save the results.</p>
 <h3>Scenario XI<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">likelihood_plot</span><span class="p">(</span><span class="n">read_meshgrid</span><span class="p">(</span><span class="s1">&#39;../../likelihood/likelihood_XI.dat&#39;</span><span class="p">),</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">likelihood_plot</span><span class="p">(</span><span class="n">read_meshgrid</span><span class="p">(</span><span class="s1">&#39;../data/likelihood/likelihood_XI.dat&#39;</span><span class="p">),</span> <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span>
                 <span class="p">[</span><span class="sa">r</span><span class="s1">&#39;$C_{\ell q}^e = -C_{\ell q}^\mu$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$C_{\ell q}^\tau$&#39;</span><span class="p">],</span> <span class="n">locleg</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">,</span>
-                <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="n">bf</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.14988535</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.26939863</span><span class="p">],</span> <span class="n">widths</span><span class="o">=</span><span class="p">[</span><span class="mf">1.5</span><span class="p">,]</span><span class="o">*</span><span class="mi">4</span><span class="p">,</span> <span class="n">fout</span><span class="o">=</span><span class="s1">&#39;../../plots/scXI&#39;</span><span class="p">)</span>
+                <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="n">bf</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.14988535</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.26939863</span><span class="p">],</span> <span class="n">widths</span><span class="o">=</span><span class="p">[</span><span class="mf">1.5</span><span class="p">,]</span><span class="o">*</span><span class="mi">4</span><span class="p">,</span> <span class="n">fout</span><span class="o">=</span><span class="s1">&#39;../data/plots/scXI&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -589,7 +589,7 @@ We first calculate the likelihood in a grid and save the results.</p>
 <span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
     <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
     <span class="n">GS</span><span class="o">.</span><span class="n">run_mp</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">scIV</span><span class="p">)</span>
-<span class="n">GS</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s1">&#39;../../likelihood/likelihood_IV_beta.dat&#39;</span><span class="p">)</span>
+<span class="n">GS</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s1">&#39;../data/likelihood/likelihood_IV_beta.dat&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -606,7 +606,7 @@ We first calculate the likelihood in a grid and save the results.</p>
 <span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
     <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
     <span class="n">GS</span><span class="o">.</span><span class="n">run_mp</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">scV</span><span class="p">)</span>
-<span class="n">GS</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s1">&#39;../../likelihood/likelihood_V_beta.dat&#39;</span><span class="p">)</span>
+<span class="n">GS</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s1">&#39;../data/likelihood/likelihood_V_beta.dat&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -623,7 +623,7 @@ We first calculate the likelihood in a grid and save the results.</p>
 <span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
     <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
     <span class="n">GS</span><span class="o">.</span><span class="n">run_mp</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">scVI</span><span class="p">)</span>
-<span class="n">GS</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s1">&#39;../../likelihood/likelihood_VI_beta.dat&#39;</span><span class="p">)</span>
+<span class="n">GS</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s1">&#39;../data/likelihood/likelihood_VI_beta.dat&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -640,7 +640,7 @@ We first calculate the likelihood in a grid and save the results.</p>
 <span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
     <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
     <span class="n">GS</span><span class="o">.</span><span class="n">run_mp</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">scXI</span><span class="p">)</span>
-<span class="n">GS</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s1">&#39;../../likelihood/likelihood_XI_beta.dat&#39;</span><span class="p">)</span>
+<span class="n">GS</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s1">&#39;../data/likelihood/likelihood_XI_beta.dat&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -669,9 +669,9 @@ We first calculate the likelihood in a grid and save the results.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">likelihood_plot</span><span class="p">(</span><span class="n">read_meshgrid2</span><span class="p">([</span><span class="s1">&#39;../../likelihood/likelihood_IV.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;../../likelihood/likelihood_IV_beta.dat&#39;</span><span class="p">]),</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">likelihood_plot</span><span class="p">(</span><span class="n">read_meshgrid2</span><span class="p">([</span><span class="s1">&#39;../data/likelihood/likelihood_IV.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;../data/likelihood/likelihood_IV_beta.dat&#39;</span><span class="p">]),</span>
                 <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="p">[</span><span class="sa">r</span><span class="s1">&#39;$C_{\ell q}^e$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$C_{\ell q}^\mu$&#39;</span><span class="p">],</span> <span class="n">locleg</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">,</span>
-                <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="n">bf</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.1511</span><span class="p">,</span><span class="mf">0.152</span><span class="p">],</span> <span class="n">widths</span><span class="o">=</span><span class="p">[</span><span class="mf">1.5</span><span class="p">,]</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span> <span class="n">fout</span><span class="o">=</span><span class="s1">&#39;../../plots/scIVbeta&#39;</span><span class="p">)</span>
+                <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="n">bf</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.1511</span><span class="p">,</span><span class="mf">0.152</span><span class="p">],</span> <span class="n">widths</span><span class="o">=</span><span class="p">[</span><span class="mf">1.5</span><span class="p">,]</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span> <span class="n">fout</span><span class="o">=</span><span class="s1">&#39;../data/plots/scIVbeta&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -684,9 +684,9 @@ We first calculate the likelihood in a grid and save the results.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">likelihood_plot</span><span class="p">(</span><span class="n">read_meshgrid2</span><span class="p">([</span><span class="s1">&#39;../../likelihood/likelihood_VI.dat&#39;</span><span class="p">,</span><span class="s1">&#39;../../likelihood/likelihood_VI_beta.dat&#39;</span><span class="p">]),</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">likelihood_plot</span><span class="p">(</span><span class="n">read_meshgrid2</span><span class="p">([</span><span class="s1">&#39;../data/likelihood/likelihood_VI.dat&#39;</span><span class="p">,</span><span class="s1">&#39;../data/likelihood/likelihood_VI_beta.dat&#39;</span><span class="p">]),</span>
                 <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="p">[</span><span class="sa">r</span><span class="s1">&#39;$C_{\ell q}^\mu$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$C_{\ell q}^\tau$&#39;</span><span class="p">],</span> <span class="n">locleg</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">,</span>
-                <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="n">bf</span><span class="o">=</span><span class="p">[</span><span class="mf">0.152</span><span class="p">,</span><span class="o">-</span><span class="mf">0.271</span><span class="p">],</span> <span class="n">widths</span><span class="o">=</span><span class="p">[</span><span class="mf">1.5</span><span class="p">,]</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span> <span class="n">fout</span><span class="o">=</span><span class="s1">&#39;../../plots/scVI_beta&#39;</span><span class="p">)</span>
+                <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="n">bf</span><span class="o">=</span><span class="p">[</span><span class="mf">0.152</span><span class="p">,</span><span class="o">-</span><span class="mf">0.271</span><span class="p">],</span> <span class="n">widths</span><span class="o">=</span><span class="p">[</span><span class="mf">1.5</span><span class="p">,]</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span> <span class="n">fout</span><span class="o">=</span><span class="s1">&#39;../data/plots/scVI_beta&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -699,10 +699,10 @@ We first calculate the likelihood in a grid and save the results.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">likelihood_plot</span><span class="p">(</span><span class="n">read_meshgrid2</span><span class="p">([</span><span class="s1">&#39;../../likelihood/likelihood_XI.dat&#39;</span><span class="p">,</span><span class="s1">&#39;../../likelihood/likelihood_XI_beta.dat&#39;</span><span class="p">]),</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">likelihood_plot</span><span class="p">(</span><span class="n">read_meshgrid2</span><span class="p">([</span><span class="s1">&#39;../data/likelihood/likelihood_XI.dat&#39;</span><span class="p">,</span><span class="s1">&#39;../data/likelihood/likelihood_XI_beta.dat&#39;</span><span class="p">]),</span>
                 <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="p">[</span><span class="sa">r</span><span class="s1">&#39;$C_{\ell q}^e = -C_{\ell q}^\mu$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$C_{\ell q}^\tau$&#39;</span><span class="p">],</span>
                 <span class="n">locleg</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="n">bf</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.14988535</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.26939863</span><span class="p">],</span> <span class="n">widths</span><span class="o">=</span><span class="p">[</span><span class="mf">1.5</span><span class="p">,]</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span>
-                <span class="n">fout</span><span class="o">=</span><span class="s1">&#39;../../plots/scXI_beta&#39;</span><span class="p">)</span>
+                <span class="n">fout</span><span class="o">=</span><span class="s1">&#39;../data/plots/scXI_beta&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

@@ -337,7 +337,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d_ell</span> <span class="o">=</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;../../ellipses/rotBII.yaml&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d_ell</span> <span class="o">=</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;../data/ellipses/rotBII.yaml&#39;</span><span class="p">)</span>
 <span class="n">bf1</span> <span class="o">=</span> <span class="n">d_ell</span><span class="p">[</span><span class="s1">&#39;bf&#39;</span><span class="p">]</span>
 
 <span class="k">def</span> <span class="nf">fit_l</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -358,7 +358,7 @@
 <span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
     <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
     <span class="n">GS</span><span class="o">.</span><span class="n">run_mp</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">fit_l</span><span class="p">)</span>
-<span class="n">GS</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s1">&#39;../../likelihood/likelihood_rotBII_l.dat&#39;</span><span class="p">)</span>
+<span class="n">GS</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s1">&#39;../data/likelihood/likelihood_rotBII_l.dat&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -383,7 +383,7 @@
 <span class="k">with</span> <span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span><span class="p">():</span>
     <span class="n">warnings</span><span class="o">.</span><span class="n">simplefilter</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
     <span class="n">GS</span><span class="o">.</span><span class="n">run_mp</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">fit_q</span><span class="p">)</span>
-<span class="n">GS</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s1">&#39;../../likelihood/likelihood_rotBII_q.dat&#39;</span><span class="p">)</span>
+<span class="n">GS</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s1">&#39;../data/likelihood/likelihood_rotBII_q.dat&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -418,10 +418,10 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">likelihood_plot</span><span class="p">(</span><span class="n">read_meshgrid</span><span class="p">(</span><span class="s1">&#39;../../likelihood/likelihood_rotBII_l.dat&#39;</span><span class="p">),</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">likelihood_plot</span><span class="p">(</span><span class="n">read_meshgrid</span><span class="p">(</span><span class="s1">&#39;../data/likelihood/likelihood_rotBII_l.dat&#39;</span><span class="p">),</span>
                 <span class="o">-</span><span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.02</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="p">[</span><span class="sa">r</span><span class="s1">&#39;$\alpha^\ell$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\beta^\ell$&#39;</span><span class="p">],</span> <span class="n">locleg</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">,</span>
                 <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="n">bf</span><span class="o">=</span><span class="p">([</span><span class="n">bf1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bf1</span><span class="p">[</span><span class="mi">2</span><span class="p">]],</span> <span class="p">[</span><span class="o">-</span><span class="n">bf1</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bf1</span><span class="p">[</span><span class="mi">2</span><span class="p">]]),</span>
-                <span class="n">widths</span><span class="o">=</span><span class="p">[</span><span class="mf">1.5</span><span class="p">,]</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.005</span><span class="p">),</span>  <span class="n">fout</span><span class="o">=</span><span class="s1">&#39;../../plots/alphabeta_l&#39;</span><span class="p">)</span>
+                <span class="n">widths</span><span class="o">=</span><span class="p">[</span><span class="mf">1.5</span><span class="p">,]</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.005</span><span class="p">),</span>  <span class="n">fout</span><span class="o">=</span><span class="s1">&#39;../data/plots/alphabeta_l&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -435,9 +435,9 @@ No contour levels were found within the data range.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">likelihood_plot</span><span class="p">(</span><span class="n">read_meshgrid</span><span class="p">(</span><span class="s1">&#39;../../likelihood/likelihood_rotBII_q.dat&#39;</span><span class="p">),</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">likelihood_plot</span><span class="p">(</span><span class="n">read_meshgrid</span><span class="p">(</span><span class="s1">&#39;../data/likelihood/likelihood_rotBII_q.dat&#39;</span><span class="p">),</span>
                 <span class="o">-</span><span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="p">[</span><span class="sa">r</span><span class="s1">&#39;$\alpha^q$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\beta^q$&#39;</span><span class="p">],</span> <span class="n">locleg</span><span class="o">=</span><span class="s1">&#39;upper right&#39;</span><span class="p">,</span> <span class="n">ticks</span><span class="o">=</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
-                <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="n">bf</span><span class="o">=</span><span class="p">[</span><span class="n">bf1</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">bf1</span><span class="p">[</span><span class="mi">4</span><span class="p">]],</span> <span class="n">widths</span><span class="o">=</span><span class="p">[</span><span class="mf">1.5</span><span class="p">,]</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span> <span class="n">fout</span><span class="o">=</span><span class="s1">&#39;../../plots/alphabeta_q&#39;</span><span class="p">)</span>
+                <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="n">bf</span><span class="o">=</span><span class="p">[</span><span class="n">bf1</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">bf1</span><span class="p">[</span><span class="mi">4</span><span class="p">]],</span> <span class="n">widths</span><span class="o">=</span><span class="p">[</span><span class="mf">1.5</span><span class="p">,]</span><span class="o">*</span><span class="mi">5</span><span class="p">,</span> <span class="n">fout</span><span class="o">=</span><span class="s1">&#39;../data/plots/alphabeta_q&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

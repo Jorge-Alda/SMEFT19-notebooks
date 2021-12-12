@@ -321,6 +321,27 @@
      Confidence intervals scenario II
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matrix-lambda-ell">
+     Matrix
+     <span class="math notranslate nohighlight">
+      \(\lambda^\ell\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matrix-lambda-q">
+     Matrix
+     <span class="math notranslate nohighlight">
+      \(\lambda^q\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wilson-coefficients">
+     Wilson coefficients
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -347,6 +368,7 @@
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">flavio.statistics.functions</span> <span class="k">import</span> <span class="n">pull</span>
 </pre></div>
 </div>
 </div>
@@ -401,7 +423,7 @@ Pull: 5.746240246765453 sigma
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">bf</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="s1">&#39;../../ellipses/rotBI.yaml&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Mass Rotation fit, Scenario I&#39;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">bf</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="s1">&#39;../data/ellipses/rotBI.yaml&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Mass Rotation fit, Scenario I&#39;</span><span class="p">,</span>
                      <span class="n">fit</span><span class="o">=</span><span class="s1">&#39;rotBI&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -542,7 +564,7 @@ Pull: 6.573827298782075 sigma
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">bf2</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span> <span class="n">L2</span><span class="p">,</span> <span class="s1">&#39;../../ellipses/rotBII.yaml&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Mass Rotation fit, Scenario II&#39;</span><span class="p">,</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">bf2</span><span class="p">,</span> <span class="n">v2</span><span class="p">,</span> <span class="n">d2</span><span class="p">,</span> <span class="n">L2</span><span class="p">,</span> <span class="s1">&#39;../data/ellipses/rotBII.yaml&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Mass Rotation fit, Scenario II&#39;</span><span class="p">,</span>
                      <span class="n">fit</span><span class="o">=</span><span class="s1">&#39;rotBII&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -677,13 +699,203 @@ Pull: 6.573827298782075 sigma
 </div>
 </div>
 <p><strong>Error in <span class="math notranslate nohighlight">\(\beta^q\)</span>:</strong> <span class="math notranslate nohighlight">\({}^{+2.8}_{-0.6}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pull</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">L</span><span class="o">-</span><span class="n">L2</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.6825832048619396
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="matrix-lambda-ell">
+<h3>Matrix <span class="math notranslate nohighlight">\(\lambda^\ell\)</span><a class="headerlink" href="#matrix-lambda-ell" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">scenarios</span><span class="o">.</span><span class="n">idemp</span><span class="p">(</span><span class="n">bf2</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">bf2</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>matrix([[4.83727958e-03, 8.01734126e-10, 6.93821324e-02],
+        [8.01734126e-10, 1.32879979e-16, 1.14994435e-08],
+        [6.93821324e-02, 1.14994435e-08, 9.95162720e-01]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">al</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.11</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">bl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="o">-</span><span class="mf">0.025</span><span class="p">,</span> <span class="mf">0.025</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ll</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">200</span><span class="p">):</span>
+    <span class="n">ll</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">scenarios</span><span class="o">.</span><span class="n">idemp</span><span class="p">(</span><span class="n">al</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">bl</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">ll</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.00347048, 0.00096559, 0.03072961],
+       [0.00096559, 0.00019225, 0.01495482],
+       [0.03072961, 0.01495482, 0.00347371]])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="matrix-lambda-q">
+<h3>Matrix <span class="math notranslate nohighlight">\(\lambda^q\)</span><a class="headerlink" href="#matrix-lambda-q" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">scenarios</span><span class="o">.</span><span class="n">idemp</span><span class="p">(</span><span class="n">bf2</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">bf2</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>matrix([[ 0.00174851, -0.02462307, -0.03375139],
+        [-0.02462307,  0.34674988,  0.47529791],
+        [-0.03375139,  0.47529791,  0.65150161]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">aq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">bf2</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">-</span><span class="mf">0.07</span><span class="p">,</span> <span class="n">bf2</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">+</span><span class="mf">0.12</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">bq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">bf2</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">-</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">bf2</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">+</span><span class="mf">2.8</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lq</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">200</span><span class="p">):</span>
+    <span class="n">lq</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">scenarios</span><span class="o">.</span><span class="n">idemp</span><span class="p">(</span><span class="n">aq</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">bq</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">lq</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.00154946, 0.02085697, 0.02088273],
+       [0.02085697, 0.25933965, 0.0829172 ],
+       [0.02088273, 0.0829172 , 0.25865855]])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="wilson-coefficients">
+<h3>Wilson coefficients<a class="headerlink" href="#wilson-coefficients" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span> <span class="o">=</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">scenarios</span><span class="o">.</span><span class="n">rotBII</span><span class="p">(</span><span class="n">bf2</span><span class="p">)</span>
+<span class="n">w2</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">match_run</span><span class="p">(</span><span class="n">eft</span><span class="o">=</span><span class="s1">&#39;WET&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;flavio&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">4.8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C9</span> <span class="o">=</span> <span class="n">w2</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="s1">&#39;C9_bsmumu&#39;</span><span class="p">][</span><span class="s1">&#39;Re&#39;</span><span class="p">]</span>
+<span class="n">C10</span> <span class="o">=</span> <span class="n">w2</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="s1">&#39;C10_bsmumu&#39;</span><span class="p">][</span><span class="s1">&#39;Re&#39;</span><span class="p">]</span>
+<span class="n">C9e</span> <span class="o">=</span> <span class="n">w2</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="s1">&#39;C9_bsee&#39;</span><span class="p">][</span><span class="s1">&#39;Re&#39;</span><span class="p">]</span>
+<span class="n">C10e</span> <span class="o">=</span> <span class="n">w2</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="s1">&#39;C10_bsee&#39;</span><span class="p">][</span><span class="s1">&#39;Re&#39;</span><span class="p">]</span>
+<span class="n">Ctau</span> <span class="o">=</span> <span class="n">w2</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="s1">&#39;CVL_bctaunutau&#39;</span><span class="p">][</span><span class="s1">&#39;Re&#39;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;C9e = </span><span class="si">{C9e}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;C10e = </span><span class="si">{C10e}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;C9mu = </span><span class="si">{C9}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;C10mu = </span><span class="si">{C10}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;CVLtau = </span><span class="si">{Ctau}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C9e = -0.3182229672250902
+C10e = -0.3570522734117335
+C9mu = -0.6731894190085603
+C10mu = -0.0020858216283651354
+CVLtau = 0.09793540920702618
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="n">C10e</span><span class="o">+</span><span class="n">C9</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-0.3161371455968268
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Clq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">bf2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mf">0.08</span><span class="p">,</span> <span class="n">bf2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mf">0.08</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">WC</span> <span class="o">=</span> <span class="p">[[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[],</span> <span class="p">[]]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">200</span><span class="p">):</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">scenarios</span><span class="o">.</span><span class="n">rotBII</span><span class="p">((</span><span class="n">Clq</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">al</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">bl</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">aq</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">bq</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    <span class="n">w2</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">match_run</span><span class="p">(</span><span class="n">eft</span><span class="o">=</span><span class="s1">&#39;WET&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="o">=</span><span class="s1">&#39;flavio&#39;</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mf">4.8</span><span class="p">)</span>
+    <span class="n">WC</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">w2</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="s1">&#39;C9_bsmumu&#39;</span><span class="p">][</span><span class="s1">&#39;Re&#39;</span><span class="p">])</span>
+    <span class="n">WC</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">w2</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="s1">&#39;C10_bsmumu&#39;</span><span class="p">][</span><span class="s1">&#39;Re&#39;</span><span class="p">])</span>
+    <span class="n">WC</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">w2</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="s1">&#39;C9_bsee&#39;</span><span class="p">][</span><span class="s1">&#39;Re&#39;</span><span class="p">])</span>
+    <span class="n">WC</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">w2</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="s1">&#39;C10_bsee&#39;</span><span class="p">][</span><span class="s1">&#39;Re&#39;</span><span class="p">])</span>
+    <span class="n">WC</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">w2</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="s1">&#39;CVL_bctaunutau&#39;</span><span class="p">][</span><span class="s1">&#39;Re&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">WC</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.21601203, 0.01216841, 0.25452375, 0.25464847, 0.03106982])
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="observable-pulls">
 <h2>Observable Pulls<a class="headerlink" href="#observable-pulls" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">comparepulls</span><span class="o">.</span><span class="n">compare</span><span class="p">(</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">scenarios</span><span class="o">.</span><span class="n">rotBII</span><span class="p">,</span> <span class="s1">&#39;../../ellipses/rotBII.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;../../TeX/pullsBII&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">comparepulls</span><span class="o">.</span><span class="n">compare</span><span class="p">(</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">scenarios</span><span class="o">.</span><span class="n">rotBII</span><span class="p">,</span> <span class="s1">&#39;../data/ellipses/rotBII.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;../data/TeX/pullsBII&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -691,12 +903,12 @@ Pull: 6.573827298782075 sigma
 <p><a class="reference external" href="https://github.com/Jorge-Alda/SMEFT19/blob/master/TeX/standalone_pullsBII.pdf">Link to the table</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">compare_plot</span><span class="p">(</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">scenarios</span><span class="o">.</span><span class="n">rotBII</span><span class="p">,</span> <span class="s1">&#39;../../ellipses/rotBII.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;../../plots/rotBII&#39;</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">plots</span><span class="o">.</span><span class="n">compare_plot</span><span class="p">(</span><span class="n">SMEFT19</span><span class="o">.</span><span class="n">scenarios</span><span class="o">.</span><span class="n">rotBII</span><span class="p">,</span> <span class="s1">&#39;../data/ellipses/rotBII.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;../data/plots/rotBII&#39;</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/01_fits_45_0.png" src="../_images/01_fits_45_0.png" />
+<img alt="../_images/01_fits_63_0.png" src="../_images/01_fits_63_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -744,17 +956,17 @@ Pull: 6.573827298782075 sigma
     <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">labels</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\Delta \log L$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">pad</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;../../plots/evoplot_</span><span class="si">{labelsplain[i]}</span><span class="s1">.pdf&#39;</span><span class="p">)</span>
-    <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;../../plots/evoplot_</span><span class="si">{labelsplain[i]}</span><span class="s1">.pgf&#39;</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;../data/plots/evoplot_</span><span class="si">{labelsplain[i]}</span><span class="s1">.pdf&#39;</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;../data/plots/evoplot_</span><span class="si">{labelsplain[i]}</span><span class="s1">.pgf&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/01_fits_48_0.png" src="../_images/01_fits_48_0.png" />
-<img alt="../_images/01_fits_48_1.png" src="../_images/01_fits_48_1.png" />
-<img alt="../_images/01_fits_48_2.png" src="../_images/01_fits_48_2.png" />
-<img alt="../_images/01_fits_48_3.png" src="../_images/01_fits_48_3.png" />
-<img alt="../_images/01_fits_48_4.png" src="../_images/01_fits_48_4.png" />
+<img alt="../_images/01_fits_66_0.png" src="../_images/01_fits_66_0.png" />
+<img alt="../_images/01_fits_66_1.png" src="../_images/01_fits_66_1.png" />
+<img alt="../_images/01_fits_66_2.png" src="../_images/01_fits_66_2.png" />
+<img alt="../_images/01_fits_66_3.png" src="../_images/01_fits_66_3.png" />
+<img alt="../_images/01_fits_66_4.png" src="../_images/01_fits_66_4.png" />
 </div>
 </div>
 </div>
