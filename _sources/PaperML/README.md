@@ -2,7 +2,7 @@
 
 This series of notebooks contain all the code to reproduce the data in Chapter 7 of my PhD thesis, which is adapted from [2109.07405](https://arxiv.org/abs/2109.07405)
 
-* [01](01_fits.ipynb): Fits to Scenarios I and II and their errors. Pulls in Scenario II.
+* [01](01_fits.ipynb): Fits to Scenarios I and II and their errors. Pulls in Scenario II. Leptoquark couplings.
 * [02](02_plotfits.ipynb): Plots for $\alpha^l$ vs $\beta^\ell$ and $\alpha^q$ vs $\beta^q$ in Scenario II.
 * [03](03_RKRD.ipynb): Plots for $R_{K^{(*)}}$ and $R_{D^{(*)}}$ observables in Scenario I and II.
 * [04](04_TrainingDatasets.ipynb): Preparation of the datasets to train the Machine Learning algorithm.
