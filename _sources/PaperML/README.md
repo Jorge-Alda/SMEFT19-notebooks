@@ -40,3 +40,7 @@ This series of notebooks contain all the code to reproduce the data in Chapter 7
     * [$\beta^\ell$](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/main/data/plots/SHAP_bl.pdf)
     * [$\alpha^q$](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/main/data/plots/SHAP_aq.pdf)
     * [$\beta^q$](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/main/data/plots/SHAP_bq.pdf)
+* Correlation matrices:
+    * [Between WET Wilson coefficients](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/main/data/plots/coeffcorr.pdf)
+    * [Between observables](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/main/data/plots/obscorr.pdf)
+* [Plot for $R_D$ and $\mathrm{B\to K\nu\nu}$](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/main/data/plots/RD_BKnunu.pdf)

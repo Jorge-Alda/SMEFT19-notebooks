@@ -42,6 +42,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -306,6 +308,18 @@
    Correlations between observables
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#correlation-between-r-d-and-mathrm-br-b-to-k-nu-nu">
+   Correlation between
+   <span class="math notranslate nohighlight">
+    \(R_D\)
+   </span>
+   and
+   <span class="math notranslate nohighlight">
+    \(\mathrm{BR}(B\to K \nu\nu)\)
+   </span>
+  </a>
+ </li>
 </ul>
 
             </nav>
@@ -375,59 +389,59 @@
     </tr>
     <tr>
       <th>mean</th>
-      <td>-0.132338</td>
       <td>0.017968</td>
       <td>0.000421</td>
       <td>-0.028252</td>
       <td>0.859014</td>
+      <td>25.556229</td>
     </tr>
     <tr>
       <th>std</th>
-      <td>0.029816</td>
       <td>0.068592</td>
       <td>0.010462</td>
       <td>0.029747</td>
       <td>0.332898</td>
+      <td>1.691890</td>
     </tr>
     <tr>
       <th>min</th>
-      <td>-0.290449</td>
       <td>-0.228999</td>
       <td>-0.071919</td>
       <td>-0.196362</td>
       <td>0.216953</td>
+      <td>14.021646</td>
     </tr>
     <tr>
       <th>25%</th>
-      <td>-0.148312</td>
       <td>-0.062257</td>
       <td>-0.005715</td>
       <td>-0.050447</td>
       <td>0.610749</td>
+      <td>24.907145</td>
     </tr>
     <tr>
       <th>50%</th>
-      <td>-0.129765</td>
       <td>0.059703</td>
       <td>0.000479</td>
       <td>-0.026974</td>
       <td>0.824694</td>
+      <td>25.911228</td>
     </tr>
     <tr>
       <th>75%</th>
-      <td>-0.112795</td>
       <td>0.073122</td>
       <td>0.006694</td>
       <td>-0.005604</td>
       <td>1.073755</td>
+      <td>26.656567</td>
     </tr>
     <tr>
       <th>max</th>
-      <td>-0.004415</td>
       <td>0.154593</td>
       <td>0.079235</td>
       <td>0.117062</td>
       <td>2.107271</td>
+      <td>28.790833</td>
     </tr>
   </tbody>
 </table>
@@ -1033,6 +1047,52 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">14</span><span class="o">-</span><span class="mi">258510</span><span class="n">a80e71</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">with</span> <span class="n">Pool</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="k">as</span> <span class="n">pool</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">obs</span> <span class="o">=</span> <span class="n">pool</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">observables</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)))</span>
+
+<span class="nn">/usr/lib/python3.8/multiprocessing/pool.py</span> in <span class="ni">map</span><span class="nt">(self, func, iterable, chunksize)</span>
+<span class="g g-Whitespace">    </span><span class="mi">362</span>         <span class="ow">in</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">that</span> <span class="ow">is</span> <span class="n">returned</span><span class="o">.</span>
+<span class="g g-Whitespace">    </span><span class="mi">363</span>         <span class="s1">&#39;&#39;&#39;</span>
+<span class="ne">--&gt; </span><span class="mi">364</span><span class="s1">         return self._map_async(func, iterable, mapstar, chunksize).get()</span>
+<span class="g g-Whitespace">    </span><span class="mi">365</span><span class="s1"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">366</span><span class="s1">     def starmap(self, func, iterable, chunksize=None):</span>
+
+<span class="nn">/usr/lib/python3.8/multiprocessing/pool.py</span> in <span class="ni">get</span><span class="nt">(self, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">763</span><span class="s1"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">764</span><span class="s1">     def get(self, timeout=None):</span>
+<span class="ne">--&gt; </span><span class="mi">765</span><span class="s1">         self.wait(timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">766</span><span class="s1">         if not self.ready():</span>
+<span class="g g-Whitespace">    </span><span class="mi">767</span><span class="s1">             raise TimeoutError</span>
+
+<span class="nn">/usr/lib/python3.8/multiprocessing/pool.py</span> in <span class="ni">wait</span><span class="nt">(self, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">760</span><span class="s1"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">761</span><span class="s1">     def wait(self, timeout=None):</span>
+<span class="ne">--&gt; </span><span class="mi">762</span><span class="s1">         self._event.wait(timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">763</span><span class="s1"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">764</span><span class="s1">     def get(self, timeout=None):</span>
+
+<span class="nn">/usr/lib/python3.8/threading.py</span> in <span class="ni">wait</span><span class="nt">(self, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">556</span><span class="s1">             signaled = self._flag</span>
+<span class="g g-Whitespace">    </span><span class="mi">557</span><span class="s1">             if not signaled:</span>
+<span class="ne">--&gt; </span><span class="mi">558</span><span class="s1">                 signaled = self._cond.wait(timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">559</span><span class="s1">             return signaled</span>
+<span class="g g-Whitespace">    </span><span class="mi">560</span><span class="s1"> </span>
+
+<span class="nn">/usr/lib/python3.8/threading.py</span> in <span class="ni">wait</span><span class="nt">(self, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">300</span><span class="s1">         try:    # restore state no matter what (e.g., KeyboardInterrupt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">301</span><span class="s1">             if timeout is None:</span>
+<span class="ne">--&gt; </span><span class="mi">302</span><span class="s1">                 waiter.acquire()</span>
+<span class="g g-Whitespace">    </span><span class="mi">303</span><span class="s1">                 gotit = True</span>
+<span class="g g-Whitespace">    </span><span class="mi">304</span><span class="s1">             else:</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1321,6 +1381,82 @@
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/06_correlations_23_0.png" src="../_images/06_correlations_23_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="correlation-between-r-d-and-mathrm-br-b-to-k-nu-nu">
+<h2>Correlation between <span class="math notranslate nohighlight">\(R_D\)</span> and <span class="math notranslate nohighlight">\(\mathrm{BR}(B\to K \nu\nu)\)</span><a class="headerlink" href="#correlation-between-r-d-and-mathrm-br-b-to-k-nu-nu" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">SMEFT19</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="k">import</span> <span class="n">Rectangle</span>
+<span class="kn">from</span> <span class="nn">matplotlib.lines</span> <span class="k">import</span> <span class="n">Line2D</span>
+<span class="kn">import</span> <span class="nn">flavio</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Knunu_SM</span> <span class="o">=</span> <span class="n">flavio</span><span class="o">.</span><span class="n">sm_prediction</span><span class="p">(</span><span class="s1">&#39;BR(B+-&gt;Knunu)&#39;</span><span class="p">)</span>
+<span class="n">Knunu_SMunc</span> <span class="o">=</span> <span class="n">flavio</span><span class="o">.</span><span class="n">sm_uncertainty</span><span class="p">(</span><span class="s1">&#39;BR(B+-&gt;Knunu)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m_RD</span> <span class="o">=</span> <span class="n">flavio</span><span class="o">.</span><span class="n">combine_measurements</span><span class="p">(</span><span class="s1">&#39;Rtaul(B-&gt;Dlnu)&#39;</span><span class="p">)</span>
+<span class="n">RD_central</span> <span class="o">=</span> <span class="n">m_RD</span><span class="o">.</span><span class="n">get_central</span><span class="p">()</span>
+<span class="n">RD_eleft</span> <span class="o">=</span> <span class="n">m_RD</span><span class="o">.</span><span class="n">get_error_left</span><span class="p">()</span>
+<span class="n">RD_eright</span> <span class="o">=</span> <span class="n">m_RD</span><span class="o">.</span><span class="n">get_error_right</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3 of the measurements of &#39;Rtaul(B-&gt;Dlnu)&#39; are multivariate. This can lead to inconsistent results as the other observables are profiled over. To be consistent, you should perform a multivariate combination that is not yet supported by `combine_measurements`.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d_bf</span> <span class="o">=</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">ellipse</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;../data/ellipses/rotBII.yaml&#39;</span><span class="p">)</span>
+<span class="n">RD_bf</span> <span class="o">=</span> <span class="n">flavio</span><span class="o">.</span><span class="n">np_prediction</span><span class="p">(</span><span class="s1">&#39;Rtaul(B-&gt;Dlnu)&#39;</span><span class="p">,</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">scenarios</span><span class="o">.</span><span class="n">rotBII</span><span class="p">(</span><span class="n">d_bf</span><span class="p">[</span><span class="s1">&#39;bf&#39;</span><span class="p">]))</span>
+<span class="n">BKnunu_bf</span> <span class="o">=</span> <span class="n">flavio</span><span class="o">.</span><span class="n">np_prediction</span><span class="p">(</span><span class="s1">&#39;BR(B+-&gt;Knunu)&#39;</span><span class="p">,</span> <span class="n">SMEFT19</span><span class="o">.</span><span class="n">scenarios</span><span class="o">.</span><span class="n">rotBII</span><span class="p">(</span><span class="n">d_bf</span><span class="p">[</span><span class="s1">&#39;bf&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">dfobs</span><span class="p">[</span><span class="s1">&#39;RD*&#39;</span><span class="p">],</span> <span class="n">dfobs</span><span class="p">[</span><span class="s1">&#39;BR(B-&gt;Knunu)&#39;</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Montecarlo points&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">([</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.45</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">2e-5</span><span class="p">])</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5e-5</span><span class="p">,</span> <span class="mf">1e-5</span><span class="p">,</span> <span class="mf">1.5e-5</span><span class="p">,</span> <span class="mf">2e-5</span><span class="p">])</span>
+<span class="n">_</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([</span><span class="sa">r</span><span class="s1">&#39;$0$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$5\times10^{-6}$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$10^{-5}$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$1.5\times10^{-5}$&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$2\times10^{-5}$&#39;</span><span class="p">],</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$R_D^\ell$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;BR($B^+\to K^+\nu\bar{\nu}$)&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">18</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">(</span> <span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">1.6e-5</span><span class="p">),</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">4e-6</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;BR($B^+\to K^+\bar{\nu}\nu$) 90\% CL excluded&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">(</span> <span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.7e-5</span><span class="p">),</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="mf">0.4e-5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;BR($B^+\to K^+\bar{\nu}\nu$) 2021 World average&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">(</span> <span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">Knunu_SM</span><span class="o">-</span><span class="n">Knunu_SMunc</span><span class="p">),</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">Knunu_SMunc</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;BR($B^+\to K^+\bar{\nu}\nu$) SM prediction&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">Rectangle</span><span class="p">(</span> <span class="p">(</span><span class="n">RD_central</span><span class="o">-</span><span class="n">RD_eleft</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">RD_eleft</span><span class="o">+</span><span class="n">RD_eright</span><span class="p">,</span> <span class="mf">3e-5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$R_D^\ell$ measurement, $1\,\sigma$&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">RD_central</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">Knunu_SM</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mf">1.1e-5</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s1">&#39;dashed&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">RD_bf</span><span class="p">,</span> <span class="n">BKnunu_bf</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span><span class="s1">&#39;Best fit prediction&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">,</span> <span class="n">borderaxespad</span><span class="o">=</span><span class="mf">0.</span><span class="p">,</span> <span class="n">scatterpoints</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="s1">&#39;$0.2$&#39;</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;$0.25$&#39;</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;$0.3$&#39;</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;$0.35$&#39;</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;$0.4$&#39;</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;$0.45$&#39;</span><span class="p">],</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">pad</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;../data/plots/RD_BKnunu.pdf&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06_correlations_29_0.png" src="../_images/06_correlations_29_0.png" />
 </div>
 </div>
 </div>
