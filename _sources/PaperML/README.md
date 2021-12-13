@@ -31,3 +31,12 @@ This series of notebooks contain all the code to reproduce the data in Chapter 7
     * $\beta^\ell$: [(pdf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/main/data/plots/evoplot_betal.pdf) | [(pgf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/main/data/plots/evoplot_betal.pgf)
     * $\alpha^q$: [(pdf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/main/data/plots/evoplot_alphaq.pdf) | [(pgf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/main/data/plots/evoplot_alphaq.pgf)
     * $\beta^q$: [(pdf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/main/data/plots/evoplot_betaq.pdf) | [(pgf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/main/data/plots/evoplot_betaq.pgf)
+* [Regression plot for the training of the Machine Learning algorithm](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/main/data/plots/regression_xgb.pdf)
+* Histogram of the ML-generated points: [(pdf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/main/data/plots/hist_xgb.pdf) | [(pgf)](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/main/data/plots/hist_xgb.pgf)
+* [SHAP summary plot](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/main/data/plots/SHAP_summary.pdf)
+* SHAP values for the fit parameters:
+    * [$C$](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/main/data/plots/SHAP_C.pdf)
+    * [$\alpha^\ell$](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/main/data/plots/SHAP_al.pdf)
+    * [$\beta^\ell$](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/main/data/plots/SHAP_bl.pdf)
+    * [$\alpha^q$](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/main/data/plots/SHAP_aq.pdf)
+    * [$\beta^q$](https://raw.githubusercontent.com/Jorge-Alda/SMEFT19-notebooks/main/data/plots/SHAP_bq.pdf)
