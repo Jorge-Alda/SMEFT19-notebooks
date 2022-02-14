@@ -9,7 +9,7 @@ dependencies:
     - pip:
         - flavio==2.3.1
         - wilson==2.0
-        - git+https://github.com/Jorge-Alda/smelli.git@custom_measurements#egg=smelli
+        - git+https://github.com/Jorge-Alda/smelli.git@more_bins#egg=smelli
         - git+https://github.com/Jorge-Alda/parscanning.git@v1.0#egg=parscanning
         - git+https://github.com/Jorge-Alda/texfig.git#egg=texfig
-        - "-e git+https://github.com/Jorge-Alda/SMEFT19.git#egg=SMEFT19"
+        - "-e git+https://github.com/Jorge-Alda/SMEFT19.git@dev#egg=SMEFT19"

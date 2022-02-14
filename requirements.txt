@@ -1,7 +1,7 @@
 particle==0.14.1
 flavio==2.3.1
 wilson==2.0
-git+https://github.com/Jorge-Alda/smelli.git@custom_measurements#egg=smelli
+git+https://github.com/Jorge-Alda/smelli.git@more_bins#egg=smelli
 git+https://github.com/Jorge-Alda/parscanning.git@v1.0#egg=parscanning
 numpy==1.22
 scipy==1.4.1
@@ -13,5 +13,4 @@ PyYAML==5.4
 scikit-learn==0.22.2.post1
 xgboost==1.0.2
 shap==0.35.0
--e git+https://github.com/Jorge-Alda/SMEFT19.git#egg=SMEFT19
-numba
+-e git+https://github.com/Jorge-Alda/SMEFT19.git@dev#egg=SMEFT19
