@@ -10,6 +10,6 @@ dependencies:
         - flavio==2.3.1
         - wilson==2.0
         - git+https://github.com/Jorge-Alda/smelli.git@more_bins#egg=smelli
-        - git+https://github.com/Jorge-Alda/parscanning.git@v1.0#egg=parscanning
+        - "git+https://github.com/Jorge-Alda/parscanning.git@1ea3acbcd2a47ed6516262c2173fdbf4bba336a9#egg=parscanning"
         - git+https://github.com/Jorge-Alda/texfig.git#egg=texfig
         - "-e git+https://github.com/Jorge-Alda/SMEFT19.git@b19151499205eed844f487c3f6ded60c90318fd7#egg=SMEFT19"
