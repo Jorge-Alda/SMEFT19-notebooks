@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "smeft19-notebooks"
+version = "3.1.0"
+description = "In these pages you will find the jupyter notebooks that are needed to fully reproduce the results of chapters 6 and 7, about various applications of the Standard Model Effective Field Theory to investigate the B-meson anomalies and their relation to other observables."
+authors = ["Jorge-Alda <jalda@unizar.es>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.12"
+SMEFT19 = {git = "https://github.com/Jorge-Alda/SMEFT19.git", rev = "jan-2023-recalc"}
+ipykernel = "^6.20.2"
+scipy = ">=1.9.3,<1.10"
+ipywidgets = "^8.0.4"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
