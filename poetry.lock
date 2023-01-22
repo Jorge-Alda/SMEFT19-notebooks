@@ -1809,7 +1809,7 @@ xgboost = "^1.7.3"
 type = "git"
 url = "https://github.com/Jorge-Alda/SMEFT19.git"
 reference = "jan-2023-recalc"
-resolved_reference = "9500dbe98dc4c3f90483e72082a632f5b8eba3ee"
+resolved_reference = "ec4fa8f9eea878a6d103f9ae12c7c8f632f631a2"
 
 [[package]]
 name = "smelli"
