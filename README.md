@@ -24,58 +24,39 @@ This code was used for the following papers:
 
 ## How to run the notebooks
 
-### Run on-line
+### Dev container
+
+If you are using `VSCode` with the Remote Development, you should be prompted to re-open the folder in a dev container. After the container is built, you will be in an enviroment where all the dependencies are already installed.
+
+If you don't use VSCode but have Docker installed, go to the cloned directory and run the command
+
+```bash
+docker build -t smeft19nb .
+```
+
+Don't forget the final dot! Once the container finishes to build, open it with the command
+
+```bash
+docker run -it -v $(pwd):/app smeft19nb
+```
+
+That will open a `bash` shell inside the container. If you want to run `python`, you can also use
+```bash
+docker run -it -v $(pwd):/app smeft19nb python
+```
+
+To start the Jupyter server, you will need also to expose the ports of the container. Use the command
+
+```bash
+docker run -it -p 8888:8888 -v $(pwd):/app smeft19nb bash run_nb.sh
+```
+
+If you want to install a `python` package, run `poetry add package_name` inside the shell, and don't forget to build the container again the next time. To install an OS package, add it to the file `apt.txt` and rebuild the container.
+
+### Run on-line [Not updated yet!!]
 
 The simplest way to run the notebooks is by visiting [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Jorge-Alda/SMEFT19-notebooks/HEAD)
 
 Click on `demo.ipynb` to see a simple example, or navigate the folders to run the code [Be careful! Binder might impose CPU limits for long computations].
 
 You can save any generated files with the menu File > Download. All files will be lost after shutting down Binder.
-
-### Run on your computer
-
-The cleanest way to run the notebooks is using the [Docker](https://docs.docker.com/engine/install/) container. In this way you always have the right version of each packaging without interfering with the rest of your system. To get the [container](https://hub.docker.com/repository/docker/jorgealda/smeft19-notebooks) use the command (only the first time, may take a while)
-
-```bash
-docker pull jorgealda/smeft19-notebooks
-```
-
-and to start it
-
-```bash
-docker run -p 8888:8888 jorgealda/smeft19-notebooks
-```
-
-Copy the url that will appear at the bottom of the terminal and open it in your favourite browser.
-
-Click on `demo.ipynb` to see a simple example, or navigate the folders to run the code. You can save any generated files with the menu File > Download.
-
-Using File > Shut Down closes the JupyterLab and **deletes the current container**, so don't do this if you want to come back. If you just want to temporally stop the container, open another terminal and type
-
-```bash
-docker ps -a | grep smeft19-notebooks
-```
-
-and you will get something like this
-
-```txt
-068d5ecc684e   jorgealda/smeft19-notebooks           "/usr/local/bin/repo…"   43 seconds ago   Up 37 seconds            0.0.0.0:8888->8888/tcp, :::8888->8888/tcp   agitated_wiles
-```
-
-The first hexadecimal digits, `068d5ecc684e` in this case, are the ID of the running container (yours will be different). You can stop the container using
-
-```bash
-docker stop 068d5ecc684e
-```
-
-To restart the container, use
-
-```bash
-docker start 068d5ecc684e && docker attach
-```
-
-To retrieve any file, even if the container is stopped, use Docker's `cp`. Files are stored by default in `/home/smeft19/`, and a copy the data produced for my thesis is in `/home/smeft19/data/`. If you have executed the Notebook `demo.ipynb`, you can get the generated plot with the command
-
-```bash
-docker cp 068d5ecc684e:/home/smeft19/demo.pdf demo.pdf
-```

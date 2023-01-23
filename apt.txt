@@ -1,3 +1,7 @@
+git
+curl
+libpython3.9-dev
+python3-pip
 dvipng
 ghostscript
 texlive-fonts-recommended
