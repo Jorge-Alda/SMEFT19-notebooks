@@ -4,15 +4,16 @@ from SMEFT19.scenarios import rotBII
 import SMEFT19
 from copy import deepcopy
 import sys
+from pathlib import Path
 
-d_ell = SMEFT19.ellipse.load('../data/ellipses/rotBII.yaml')
+my_path = Path(__file__).parent
+d_ell = SMEFT19.ellipse.load(my_path.parent / "data" / "ellipses" / 'rotBII.yaml')
 bf = d_ell['bf']
 
 dim_min = [-0.1, -0.07, -0.04, -0.15, -0.7]
 dim_max = [0.1, 0.07, 0.04, 0.07, 3.0]
 
 coefs = ['C', 'al', 'bl', 'aq', 'bq']
-
 
 if __name__ == '__main__':
     id_x = coefs.index(sys.argv[-2])
@@ -36,23 +37,23 @@ if __name__ == '__main__':
             lh_point[id_y] = y
             lg = likelihood_fits(lh_point, rotBII)
             return {k: max(v, -100) for k, v in lg.items()}
+    with open(my_path.parent / "data" / "likelihood" / f'likelihood_rotBII_{sys.argv[-2]}{sys.argv[-1]}.dat', 'rt') as f_global:
+        t = f_global.read()
+        calculated = t.count('\t') + t.count('\n')
 
-    with open(f'../data/likelihood/likelihood_rotBII_{sys.argv[-2]}{sys.argv[-1]}.dat', 'at') as f_global, \
-            open(f'../data/likelihood/likelihood_rotBII_{sys.argv[-2]}{sys.argv[-1]}_RK.dat', 'at') as f_RK, \
-            open(f'../data/likelihood/likelihood_rotBII_{sys.argv[-2]}{sys.argv[-1]}_RD.dat', 'at') as f_RD, \
-            open(f'../data/likelihood/likelihood_rotBII_{sys.argv[-2]}{sys.argv[-1]}_LFV.dat', 'at') as f_LFV:
-        for i in range(0, 50*50):
+    with open(my_path.parent / "data" / "likelihood" / f'likelihood_rotBII_{sys.argv[-2]}{sys.argv[-1]}.dat', 'at') as f_global, \
+            open(my_path.parent / "data" / "likelihood" / f'likelihood_rotBII_{sys.argv[-2]}{sys.argv[-1]}_RK.dat', 'at') as f_RK, \
+            open(my_path.parent / "data" / "likelihood" / f'likelihood_rotBII_{sys.argv[-2]}{sys.argv[-1]}_RD.dat', 'at') as f_RD, \
+            open(my_path.parent / "data" / "likelihood" /  f'likelihood_rotBII_{sys.argv[-2]}{sys.argv[-1]}_LFV.dat', 'at') as f_LFV:
+        for i in range(calculated, 50*(calculated//50+1)):
             lg = lh(i)
             if i % 50 == 49:
                 sep = '\n'
             else:
                 sep = '\t'
             f_global.write(f'{lg["global"]}{sep}')
-            f_global.flush()
             f_RK.write(f'{lg["likelihood_lfu_fcnc.yaml"]}{sep}')
-            f_RK.flush()
             f_RD.write(f'{lg["likelihood_rd_rds.yaml"]}{sep}')
-            f_RD.flush()
             f_LFV.write(f'{lg["likelihood_lfv.yaml"]}{sep}')
-            f_LFV.flush()
             print(i)
+
