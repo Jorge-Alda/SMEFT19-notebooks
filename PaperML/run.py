@@ -26,10 +26,10 @@ if __name__ == '__main__':
         ymax = dim_max[id_x]
         xmargin = 0.02*(xmax-xmin)
         ymargin = 0.02*(ymax-ymin)
-        ix = num % 50
-        iy = num // 50
-        x = (xmin-xmargin) + ix/50 * ((xmax+xmargin) - (xmin-xmargin))
-        y = (ymin-ymargin) + iy/50 * ((ymax+ymargin) - (ymin-ymargin))
+        ix = num % 30
+        iy = num // 30
+        x = (xmin-xmargin) + ix/30 * ((xmax+xmargin) - (xmin-xmargin))
+        y = (ymin-ymargin) + iy/30 * ((ymax+ymargin) - (ymin-ymargin))
         with warnings.catch_warnings():
             warnings.simplefilter('ignore')
             lh_point = deepcopy(bf)
@@ -45,10 +45,11 @@ if __name__ == '__main__':
             open(my_path.parent / "data" / "likelihood" / f'likelihood_rotBII_{sys.argv[-2]}{sys.argv[-1]}_RK.dat', 'at') as f_RK, \
             open(my_path.parent / "data" / "likelihood" / f'likelihood_rotBII_{sys.argv[-2]}{sys.argv[-1]}_RD.dat', 'at') as f_RD, \
             open(my_path.parent / "data" / "likelihood" /  f'likelihood_rotBII_{sys.argv[-2]}{sys.argv[-1]}_LFV.dat', 'at') as f_LFV:
-        for i in range(calculated, 50*(calculated//50+1)):
+        for i in range(calculated, 30*30):
             lg = lh(i)
-            if i % 50 == 49:
+            if i % 30 == 29:
                 sep = '\n'
+                f_global.flush()
             else:
                 sep = '\t'
             f_global.write(f'{lg["global"]}{sep}')
