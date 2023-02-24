@@ -10,8 +10,8 @@ my_path = Path(__file__).parent
 d_ell = SMEFT19.ellipse.load(my_path.parent / "data" / "ellipses" / 'rotBII.yaml')
 bf = d_ell['bf']
 
-dim_min = [-0.1, -0.07, -0.04, -0.15, -0.7]
-dim_max = [0.1, 0.07, 0.04, 0.07, 3.0]
+dim_min = [-0.3, -0.15, -0.02, -0.15, 0]
+dim_max = [0, 0.15, 0.02, 0.15, 3.0]
 
 coefs = ['C', 'al', 'bl', 'aq', 'bq']
 
@@ -22,8 +22,8 @@ if __name__ == '__main__':
     def lh(num: int) -> float:
         xmin = dim_min[id_x]
         xmax = dim_max[id_x]
-        ymin = dim_min[id_x]
-        ymax = dim_max[id_x]
+        ymin = dim_min[id_y]
+        ymax = dim_max[id_y]
         xmargin = 0.02*(xmax-xmin)
         ymargin = 0.02*(ymax-ymin)
         ix = num % 30
@@ -36,6 +36,7 @@ if __name__ == '__main__':
             lh_point[id_x] = x
             lh_point[id_y] = y
             lg = likelihood_fits(lh_point, rotBII)
+            #print(f"{x:.4f}\t{y:.4f}\t{lg['global']:.4f}")
             return {k: max(v, -100) for k, v in lg.items()}
     with open(my_path.parent / "data" / "likelihood" / f'likelihood_rotBII_{sys.argv[-2]}{sys.argv[-1]}.dat', 'rt') as f_global:
         t = f_global.read()
@@ -56,5 +57,5 @@ if __name__ == '__main__':
             f_RK.write(f'{lg["likelihood_lfu_fcnc.yaml"]}{sep}')
             f_RD.write(f'{lg["likelihood_rd_rds.yaml"]}{sep}')
             f_LFV.write(f'{lg["likelihood_lfv.yaml"]}{sep}')
-            print(i)
+            #print(i)
 
