@@ -13,6 +13,7 @@ ipykernel = "^6.20.2"
 scipy = ">=1.9.3,<1.10"
 ipywidgets = "^8.0.4"
 jupyter = "^1.0.0"
+parton = "^0.2.1"
 
 
 [build-system]
