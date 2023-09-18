@@ -8,12 +8,12 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = ">=3.9,<3.12"
-SMEFT19 = {git = "https://github.com/Jorge-Alda/SMEFT19.git", rev = "jan-2023-recalc"}
 ipykernel = "^6.20.2"
 scipy = ">=1.9.3,<1.10"
 ipywidgets = "^8.0.4"
 jupyter = "^1.0.0"
 parton = "^0.2.1"
+smeft19 = { git = "https://github.com/Jorge-Alda/SMEFT19", branch="jan-2023-recalc"}
 
 
 [build-system]
