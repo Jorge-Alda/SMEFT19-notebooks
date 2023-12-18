@@ -11,4 +11,4 @@ and then is rotated to the mass basis. Only the quark sector gets rotated. C1 an
 
     - A dictionary containing the SMEFT Wilson Coefficients of the fit.
     '''
-    return massrotation([x[0], x[1], 0, 0, 0, x[2]])
+    return SMEFT19.scenarios.massrotation([x[0], x[1], 0, 0, 0, x[2]])
