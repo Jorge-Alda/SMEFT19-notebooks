@@ -2,7 +2,6 @@
 
 import warnings
 from SMEFT19 import likelihood_fits
-from SMEFT19.scenarios import rotBIII
 import SMEFT19
 from copy import deepcopy
 from pathlib import Path
