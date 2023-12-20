@@ -6,6 +6,7 @@ from SMEFT19.scenarios import rotBIII
 import SMEFT19
 from copy import deepcopy
 from pathlib import Path
+from parscanning import RandomScan
 
 
 my_path = Path(__file__).parent
@@ -18,7 +19,7 @@ dim_max = [0, 0.0, 3.0]
 N = 50
 
 coefs = ['C1', 'C3', 'bq']
-
+'''
 for (fit_x, fit_y) in [('C1', 'C3'), ('C1', 'bq'), ('C3', 'bq')]:
 
     id_x = coefs.index(fit_x)
@@ -71,3 +72,27 @@ for (fit_x, fit_y) in [('C1', 'C3'), ('C1', 'bq'), ('C3', 'bq')]:
             f_RD.write(f'{lg["likelihood_rd_rds.yaml"]}{sep}')
             f_LFV.write(f'{lg["likelihood_lfv.yaml"]}{sep}')
             f_bqnunu.write(f'{lg["likelihood_bqnunu.yaml"]}{sep}')
+'''
+
+def rotBIII(x):
+    r'''
+Scenario BIII\: NP affects only the third generation in the interaction basis
+and then is rotated to the mass basis. Only the quark sector gets rotated. C1 and C3 can be different.
+
+:Arguments:
+
+    - x\: Coordinates in the parameter space of the fit. x = [C1, C3, beta_q].
+
+:Returns:
+
+    - A dictionary containing the SMEFT Wilson Coefficients of the fit.
+    '''
+    return SMEFT19.scenarios.massrotation([x[0], x[1], 0, 0, 0, x[2]])
+
+RS = RandomScan(SMEFT19.likelihood_global, dim_min,
+                dim_max, 10)
+
+for i in range(100):
+    RS.run_mp(4, rotBIII)
+    RS.write('../data/samples/randompoints_III.dat', 'at')
+    RS.clear()
